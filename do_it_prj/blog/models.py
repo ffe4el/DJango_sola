@@ -10,4 +10,7 @@ class Post(models.Model):
     def __str__(self):
         return f'[{self.pk}] {self.title}'
         #장고의 모델을 만들면 기본적으로 pk 필드가 만들어진다. pk는 각 레코드에 대한 고유값
+
+    def get_absolute_url(self):
+        return f'/blog/{self.pk}/'
 # Create your models here.

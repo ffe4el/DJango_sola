@@ -15,6 +15,16 @@ def index(request):
         }
     )
 
+def single_post_page(request, pk):
+    post = Post.objects.get(pk=pk)
+    return render(
+        request,
+        'blog/single_post_page.html',
+        {
+            'post': post,
+        }
+    )
+
 #CBV로 페이지 만들기
 # class PostList(ListView):
 #     model = Post #ListView를 사용할 것이고, model은 Post다.
