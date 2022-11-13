@@ -3,6 +3,7 @@ import os
 
 class Post(models.Model):
     title = models.CharField(max_length=30) #제목은 문자를 담는 필드로, 최대 30글자까지
+    hook_text = models.CharField(max_length=100, blank=True)
     content = models.TextField() #내용은 문자열의 길이 제한이 없는 텍스트 필드
     head_image=models.ImageField(upload_to='blog/images/%Y/%m/%d/', blank=True)
     file_upload = models.FileField(upload_to='blog/files/%Y/%m/%d/', blank=True)
