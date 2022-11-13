@@ -9,7 +9,7 @@ def index(request):
 
     return render(
         request,
-        'blog/index.html',
+        'blog/landing.html',
         {
             'posts' : posts, #render()함수안에 posts를 딕셔너리 형태로 추가
         }
@@ -28,5 +28,5 @@ def single_post_page(request, pk):
 #CBV로 페이지 만들기
 # class PostList(ListView):
 #     model = Post #ListView를 사용할 것이고, model은 Post다.
-#     template_name = 'blog/index.html'
+#     template_name = 'blog/landing.html'
 # Create your views here.
