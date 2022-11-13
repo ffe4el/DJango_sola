@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+    <h1>Blog</h1>
+
+<!--쿼리를 통해 받아온 Post레코드들을 for 문을 이용해 뿌려준다.-->
+{% for p in posts %}
+    <h2>{{ p }}</h2>
+    <h4>{{ p.created_at }}</h4>
+    <p>{{ p.content }}</p>
+{% endfor %}
+
+
+</body>
+</html>
