@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 import os
 
 class Post(models.Model):
@@ -9,10 +10,11 @@ class Post(models.Model):
     file_upload = models.FileField(upload_to='blog/files/%Y/%m/%d/', blank=True)
     created_at = models.DateTimeField(auto_now_add=True) #작성일은 월일시분초까지 기록할 수 있게 해주는 타임 필드
     update_at = models.DateTimeField(auto_now=True)
-    # author : 추후 작성 예정
+
+    author = models.ForeignKey(User, on_delete=models.CASCADE) #CASCADE는 작성자가 데이터베이스에서 삭제되었을때 이 포스트도 같이 삭제한다라는 의미.
 
     def __str__(self):
-        return f'[{self.pk}] {self.title}'
+        return f'[{self.pk}]{self.title} :: {self.author}'
         #장고의 모델을 만들면 기본적으로 pk 필드가 만들어진다. pk는 각 레코드에 대한 고유값
 
     def get_absolute_url(self):
