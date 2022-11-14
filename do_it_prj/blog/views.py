@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import Post
+from .models import Post, Category
 
 #FBV로 페이지 만들기
 # def index(request):
@@ -29,6 +29,12 @@ from .models import Post
 class PostList(ListView):
     model = Post #ListView를 사용할 것이고, model은 Post다.
     ordering = '-pk'
+
+    def get_context_data(self, **kwargs):
+        context = super(PostList, self).get_context_data()
+        context['categories']=Category.objects.all()
+        context['no_category_post_count'] = Post.objects.filter(category=None).count()
+        return context
 
 class PostDetail(DetailView):
     model = Post
