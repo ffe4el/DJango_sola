@@ -9,6 +9,7 @@ urlpatterns = [
     # path('', views.index),
 
     #CBV로 페이지 만들기
+    path('category/<str:slug>/', views.category_page),
     path('<int:pk>/', views.PostDetail.as_view()),
     path('', views.PostList.as_view()),
     # path('<int:pk>/', views.single_post_page),
