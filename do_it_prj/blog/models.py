@@ -11,7 +11,9 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True) #작성일은 월일시분초까지 기록할 수 있게 해주는 타임 필드
     update_at = models.DateTimeField(auto_now=True)
 
-    author = models.ForeignKey(User, on_delete=models.CASCADE) #CASCADE는 작성자가 데이터베이스에서 삭제되었을때 이 포스트도 같이 삭제한다라는 의미.
+    author = models.ForeignKey(User, null=True, on_delete=models.SET_NULL) #CASCADE는 작성자가 데이터베이스에서 삭제되었을때 이 포스트도 같이 삭제한다라는 의미.
+                                                                #SET_NULL은 작성자가 데이터베이스에서 삭제되었을때 이 포스트의 작성자명을 null값으로 둔다는 의미.
+
 
     def __str__(self):
         return f'[{self.pk}]{self.title} :: {self.author}'
