@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>About SOLA</title>
+        <title>About {{ name }}</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -40,9 +40,9 @@
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="{% static 'single_pages/bootstrap/assets/img/myemoji.png' %}" alt="..." />
+                <img class="masthead-avatar mb-5" src="{{ head_image }}" alt="..." />
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Dancing-Machine<br>SOLA</h1>
+                <h1 class="masthead-heading text-uppercase mb-0">{{ name }}</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -50,7 +50,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Jeonbuk University - SmartFarm - SoftEngineer</p>
+                <p class="masthead-subheading font-weight-light mb-0">{{ hook_text }}</p>
             </div>
         </header>
         <!-- Portfolio Section-->
@@ -137,7 +137,7 @@
                 <!-- About Section Content-->
                 <div class="row">
                     <div align="center"><p class="lead"><br><img src="{% static 'single_pages/bootstrap/assets/img/portfolio/sola.png' %}" width='300' height='300' alt="..." /><br><br><br>
-                    Name : SOLA KIM<br>Age: 20(Korea age:20)<br>Birth : 2001-09-26(Libra)<br> Major : Digital Agriculture Tech(JBNU)</p></div>
+                    {{ about_me }}</p></div>
                 </div>
                 <!-- About Section Button-->
 {#                <div class="text-center mt-4">#}
@@ -277,7 +277,7 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Name : SOLA KIM<br>Age: 20(Korea age:20)<br>Birth : 2001-09-26(Libra)<br> Major : Digital Agriculture Tech(JBNU)<br></p>
+                                    <p class="mb-4">{{ port1 }}<br></p>
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Close Window
@@ -309,7 +309,7 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cake.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <p class="mb-4">{{ port2 }}</p>
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Close Window
