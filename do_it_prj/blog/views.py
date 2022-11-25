@@ -122,7 +122,6 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
                 self.object.tags.add(tag)
 
         return response
-
 #FBV로 category_page() 함수 만들기
 def category_page(request, slug):
     if slug == 'no_category':
