@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-import os
+
 
 class Post(models.Model):
     name = models.CharField(max_length=30) #제목은 문자를 담는 필드로, 최대 30글자까지
