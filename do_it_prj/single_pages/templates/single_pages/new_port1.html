@@ -1,4 +1,5 @@
 {% extends 'single_pages/baseport.html' %}
+{% load static %}
 
 <!-- Masthead-->
 {% block head_area %}
@@ -6,7 +7,7 @@
     <!-- Masthead Avatar Image-->
     <input type="image" class="masthead-avatar mb-5" name="head_image">
     <!-- Masthead Heading-->
-    <h1 class="masthead-heading text-uppercase mb-0">{{name}}</h1>
+    <h1 class="masthead-heading text-uppercase mb-0">이름 : <input  type="text" name="name"></h1>
     <!-- Icon Divider-->
     <div class="divider-custom divider-light">
         <div class="divider-custom-line"></div>
@@ -14,7 +15,7 @@
         <div class="divider-custom-line"></div>
     </div>
     <!-- Masthead Subheading-->
-    <p class="masthead-subheading font-weight-light mb-0"><input type="text" name="hook_text"></p>
+    <a class="masthead-subheading font-weight-light mb-0">한줄 소개글 : <input type="text" name="hook_text"></a>
     </form>
 {% endblock %}
 

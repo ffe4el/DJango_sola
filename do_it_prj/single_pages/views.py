@@ -21,7 +21,7 @@ def about_me(request):
 #     fields=['name', 'head_image', 'hook_text', 'port1', 'port2', 'about_me', "profile_image"]
 #     template_name = 'blog/new_port.html'
 
-def new_port(request):
+# def new_port(request):
     #
     # name = request.GET.get('name')
     # head_image = request.GET.get('head_image')
@@ -49,8 +49,12 @@ def new_port(request):
     #     'profile_image': profile_image
     #
     # }
-    return render(request, 'single_pages/new_port.html')
+    # return render(request, 'single_pages/new_port.html')
     # return render(request, 'single_pages/new_port.html', context)
+
+class PostCreate(CreateView):
+    model=Port
+    fields =['name', 'head_image', 'hook_text', 'port1', 'port2', 'about_me', 'profile_image']
 
 def port(request):
     return render(request, 'single_pages/port.html')

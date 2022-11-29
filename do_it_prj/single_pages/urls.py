@@ -7,5 +7,5 @@ urlpatterns = [
     # path('create_port/', views.PostCreate.as_view()),
     # path('new_port/', views.PostCreate.as_view())
     path('port/', views.port),
-    path('new_port/', views.new_port),
+    path('new_port/', views.PostCreate.as_view()),
 ]
