@@ -1,7 +1,7 @@
 from django import forms
+from .models import Post
 
-class ArticleForm(forms.Form):
-
-    titile = forms.CharField()
-
-    content = forms.CharField(widget=forms.Textarea)
+class WriteForm(forms.Form):
+    class Meta:
+        model = Post
+        fields = '__all__'

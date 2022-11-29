@@ -1,0 +1,16 @@
+{% extends 'single_pages/post_form_base.html' %}
+{% load static %}
+{% block header1 %}Create New Port{% endblock %}
+
+{% block header %}<h1>Create New Port</h1>{% endblock %}
+
+{% block main_area %}
+<form action="{% url 'create' %}"method="post" enctype="'multipart/form-data">{%  csrf_token %}
+    <table>
+        <p>포트폴리오 생성 페이지</p>
+    {{ form.as_p }}
+    </table>
+    <br>
+<button type="submit" class="btn btn primary float-right">Create</button>
+</form>
+{% endblock %}

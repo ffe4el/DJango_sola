@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 import os
 
-class Port(models.Model):
+class Post(models.Model):
     name = models.CharField(max_length=30) #제목은 문자를 담는 필드로, 최대 30글자까지
     head_image = models.ImageField(upload_to='single_pages/static/single_pages/bootstrap/asseets/img/avatar/',blank=True)
     hook_text = models.CharField(max_length=50, blank=True)
@@ -15,8 +15,7 @@ class Port(models.Model):
 
     # def __str__(self):
     #     return f'{self.pk} :: {self.name} :: Portfolio'
-    def get_absolute_url(self):
-        return('lawyer_detail', kwargs={'lawyer_slug': self.lawyer_slug})
+
     # def get_absolute_url(self):
     #     return f'/blog/{self.pk}/'
 # Create your models here.

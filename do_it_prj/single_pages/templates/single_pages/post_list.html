@@ -1,0 +1,20 @@
+{% extends 'single_pages/post_form_base.html' %}
+{% load static %}
+
+{% block header1 %}Port List{% endblock %}
+
+{% block header %}<h1>Porfolio List</h1>{% endblock %}
+
+{% block main_area %}
+<a href="{% url 'create'%}">
+<button>
+    포트폴리오 생성
+</button>
+</a>
+
+<a href="{% url 'delete' pk=d.pk %}">
+        <button>
+           삭제
+        </button>
+    </a>
+{% endblock %}

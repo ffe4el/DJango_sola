@@ -5,12 +5,12 @@
 {% block head_area %}
     <form action="">
     <!-- Masthead Avatar Image-->
-    {% if port.head_image %}
-    <img class="img-fluid rounded" src="{{ port.head_image.url }}" alt="{{ port.name }} head_image">
+    {% if post.head_image %}
+    <img class="img-fluid rounded" src="{{ post.head_image.url }}" alt="{{ post.name }} head_image">
     {% endif %}
     <!-- Masthead Heading-->
-    {% if port.name %}
-    <h1 class="masthead-heading text-uppercase mb-0">{{ port.name }}</h1>
+    {% if post.name %}
+    <h1 class="masthead-heading text-uppercase mb-0">{{ post.name }}</h1>
     {% endif %}
     <!-- Icon Divider-->
     <div class="divider-custom divider-light">
@@ -19,8 +19,8 @@
         <div class="divider-custom-line"></div>
     </div>
     <!-- Masthead Subheading-->
-    {% if port.hook_text %}
-    <a class="masthead-subheading font-weight-light mb-0">{{ port.hook_text }}</a>
+    {% if post.hook_text %}
+    <a class="masthead-subheading font-weight-light mb-0">{{ post.hook_text }}</a>
     {% endif %}
     </form>
 {% endblock %}
@@ -86,13 +86,13 @@
 {% block mypic_area %}
     <div class="row">
         <div align="center"><p class="lead"><br><img src="{% static 'single_pages/bootstrap/assets/img/portfolio/sola.png' %}" width='300' height='300' alt="..." /><br><br><br>
-        {{ about_me }}</p></div>
+        {{ post.about_me }}</p></div>
     </div>
 {% endblock %}
 
 {% block port1 %}
     <!-- Portfolio Modal - Title-->
-    {% if port.port1 %}
+    {% if post.port1 %}
     <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
     <!-- Icon Divider-->
     <div class="divider-custom">
@@ -103,7 +103,7 @@
     <!-- Portfolio Modal - Image-->
     <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." />
     <!-- Portfolio Modal - Text-->
-    <p class="mb-4">{{ port.port1 }}<br></p>
+    <p class="mb-4">{{ post.port1 }}<br></p>
 
     <button class="btn btn-primary" data-bs-dismiss="modal">
         <i class="fas fa-xmark fa-fw"></i>
@@ -115,7 +115,7 @@
 <!-- Portfolio Modal 2-->
 {% block port2 %}
     <!-- Portfolio Modal - Title-->
-    {% if port.port2 %}
+    {% if post.port2 %}
     <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
     <!-- Icon Divider-->
     <div class="divider-custom">
@@ -126,7 +126,7 @@
     <!-- Portfolio Modal - Image-->
     <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cake.png" alt="..." />
     <!-- Portfolio Modal - Text-->
-    <p class="mb-4">{{ port.port2 }}</p>
+    <p class="mb-4">{{ post.port2 }}</p>
     <button class="btn btn-primary" data-bs-dismiss="modal">
         <i class="fas fa-xmark fa-fw"></i>
         Close Window
