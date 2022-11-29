@@ -15,7 +15,8 @@ class Port(models.Model):
 
     # def __str__(self):
     #     return f'{self.pk} :: {self.name} :: Portfolio'
-
+    def get_absolute_url(self):
+        return('lawyer_detail', kwargs={'lawyer_slug': self.lawyer_slug})
     # def get_absolute_url(self):
     #     return f'/blog/{self.pk}/'
 # Create your models here.
