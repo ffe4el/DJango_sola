@@ -8,10 +8,10 @@ class Post(models.Model):
     hook_text = models.CharField(max_length=50, blank=True)
     port1 = models.TextField() #내용은 문자열의 길이 제한이 없는 텍스트 필드
     port2 = models.TextField()
-    about_me = models.TextField(max_length=50)
-    profile_image = models.ImageField(upload_to='single_pages/static/single_pages/bootstrap/asseets/img/avatar1/',blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)  # 작성일은 월일시분초까지 기록할 수 있게 해주는 타임 필드
-    update_at = models.DateTimeField(auto_now=True)
+    # about_me = models.TextField(max_length=50)
+    # profile_image = models.ImageField(upload_to='single_pages/static/single_pages/bootstrap/asseets/img/avatar1/',blank=True)
+    # created_at = models.DateTimeField(auto_now_add=True)  # 작성일은 월일시분초까지 기록할 수 있게 해주는 타임 필드
+    # update_at = models.DateTimeField(auto_now=True)
 
     # def __str__(self):
     #     return f'{self.pk} :: {self.name} :: Portfolio'

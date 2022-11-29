@@ -1,6 +1,6 @@
 from django.contrib.gis.db.backends.postgis import models
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import ListView, DetailView, CreateView, DeleteView
+from django.views.generic import ListView, UpdateView, DetailView, CreateView, DeleteView
 from .models import Post
 from .forms import WriteForm
 from django.http import HttpResponse
@@ -76,6 +76,21 @@ class PostDelete(DeleteView) :
     model = models.Designer
     template_name ='delete.html'
     success_url='/' # or reverse_lazy('designer') url 이름
+
+
+# Update(게시물 수정)
+class PostUpdate(UpdateView):
+    model = models.Post
+    fields = ['name', 'head_image', 'hook_text', 'port1', 'port2', 'about_me', 'profile_image']
+    template_name = 'update.html'
+    success_url = '/'  # or reverse_lazy('designer') url 이름
+
+    # def form_valid(self, form):
+    #     designer = form.save(commit=False)
+    #     designer.adress =form.cleaned_data['image']
+
+    #     designer.save()
+    #     return super().form_valid(form)
 
 
 

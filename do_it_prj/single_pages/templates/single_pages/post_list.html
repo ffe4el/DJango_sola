@@ -6,15 +6,36 @@
 {% block header %}<h1>Porfolio List</h1>{% endblock %}
 
 {% block main_area %}
+
+{% for d in post %}
+    <div>
+    {% if d.image %}
+        <img src = '{{ d.image.url }}' hegiht = 150 width = 150>
+    {% endif %}
+
+    <h5>{{ d.name }} </h5>
+    <h5>{{ d.hook_text }} </h5>
+
+    <a href="{% url 'delete' pk=d.pk %}">
+        <button>
+           삭제
+        </button>
+    </a>
+
+    <a href="{% url 'update' pk=d.pk %}">
+        <button>
+           수정
+        </button>
+    </a>
+    </div>
+
+
+
+{% endfor %}
+
 <a href="{% url 'create'%}">
 <button>
     포트폴리오 생성
 </button>
 </a>
-
-<a href="{% url 'delete' pk=d.pk %}">
-        <button>
-           삭제
-        </button>
-    </a>
 {% endblock %}
