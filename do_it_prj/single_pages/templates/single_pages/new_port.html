@@ -5,9 +5,13 @@
 {% block head_area %}
     <form action="">
     <!-- Masthead Avatar Image-->
-    <img class="img-fluid rounded" src="{{ post.head_image.url }}" alt="{{ post.title }} head_image">
+    {% if port.head_image %}
+    <img class="img-fluid rounded" src="{{ port.head_image.url }}" alt="{{ port.name }} head_image">
+    {% endif %}
     <!-- Masthead Heading-->
-    <h1 class="masthead-heading text-uppercase mb-0">이름 : <input  type="text" name="name"></h1>
+    {% if port.name %}
+    <h1 class="masthead-heading text-uppercase mb-0">{{ port.name }}</h1>
+    {% endif %}
     <!-- Icon Divider-->
     <div class="divider-custom divider-light">
         <div class="divider-custom-line"></div>
@@ -15,7 +19,9 @@
         <div class="divider-custom-line"></div>
     </div>
     <!-- Masthead Subheading-->
-    <a class="masthead-subheading font-weight-light mb-0">한줄 소개글 : <input type="text" name="hook_text"></a>
+    {% if port.hook_text %}
+    <a class="masthead-subheading font-weight-light mb-0">{{ port.hook_text }}</a>
+    {% endif %}
     </form>
 {% endblock %}
 
@@ -86,6 +92,7 @@
 
 {% block port1 %}
     <!-- Portfolio Modal - Title-->
+    {% if port.port1 %}
     <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
     <!-- Icon Divider-->
     <div class="divider-custom">
@@ -96,16 +103,19 @@
     <!-- Portfolio Modal - Image-->
     <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." />
     <!-- Portfolio Modal - Text-->
-    <p class="mb-4">{{ port1 }}<br></p>
+    <p class="mb-4">{{ port.port1 }}<br></p>
+
     <button class="btn btn-primary" data-bs-dismiss="modal">
         <i class="fas fa-xmark fa-fw"></i>
         Close Window
     </button>
+    {% endif %}
 {% endblock %}
 
 <!-- Portfolio Modal 2-->
 {% block port2 %}
     <!-- Portfolio Modal - Title-->
+    {% if port.port2 %}
     <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
     <!-- Icon Divider-->
     <div class="divider-custom">
@@ -116,11 +126,12 @@
     <!-- Portfolio Modal - Image-->
     <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cake.png" alt="..." />
     <!-- Portfolio Modal - Text-->
-    <p class="mb-4">{{ port2 }}</p>
+    <p class="mb-4">{{ port.port2 }}</p>
     <button class="btn btn-primary" data-bs-dismiss="modal">
         <i class="fas fa-xmark fa-fw"></i>
         Close Window
     </button>
+    {% endif %}
 {% endblock %}
 
 <!-- Portfolio Modal 3-->
