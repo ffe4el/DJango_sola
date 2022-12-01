@@ -133,7 +133,7 @@ def category_page(request, slug):
 
     return render(
         request,
-        'blog/new_port.html',
+        'blog/post_detail.html',
         {
             'post_list': post_list,
             'categories': Category.objects.all(),
@@ -148,7 +148,7 @@ def tag_page(request, slug):
 
     return render(
         request,
-        'blog/new_port.html',
+        'blog/post_detail.html',
         {
             'post_list': post_list,
             'tag': tag,

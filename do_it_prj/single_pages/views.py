@@ -1,6 +1,7 @@
 # from django.contrib.gis.db.backends.postgis import models
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, UpdateView, DetailView, CreateView, DeleteView
+from . import models
 from .models import Post
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
@@ -20,7 +21,7 @@ def about_me(request):
 # class PostCreate(CreateView):
 #     model= Post
 #     fields=['name', 'head_image', 'hook_text', 'port1', 'port2', 'about_me', "profile_image"]
-#     template_name = 'blog/new_port.html'
+#     template_name = 'blog/post_detail.html'
 
 # def new_port(request):
     #
@@ -50,45 +51,45 @@ def about_me(request):
     #     'profile_image': profile_image
     #
     # }
-    # return render(request, 'single_pages/new_port.html')
-    # return render(request, 'single_pages/new_port.html', context)
+    # return render(request, 'single_pages/post_detail.html')
+    # return render(request, 'single_pages/post_detail.html', context)
 class PostList(ListView):
-    model= Post
+    model= models.Post
     context_object_name = 'post'
-    template_name = 'post_list.html'
+    template_name = 'single_pages/post_list.html'
     ordering = '-pk'
 
 class PostDetail(DetailView):
-    model = Post
-    template_name = 'new_port.html'
+    model = models.Post
+    template_name = 'single_pages/post_detail.html'
 
 class PostCreate(CreateView):
     model=Post
     fields =['name', 'head_image', 'hook_text', 'port1', 'port2',]
-    success_url = '/post'
+    success_url = '/'
     template_name = 'single_pages/post_form.html'
 
     def form_valid(self, form):
         post = form.save(commit=False)
-        post.adress = form.cleaned_data['head_image']
+        post.address = form.cleaned_data['head_image']
 
         post.save()
         return super().form_valid(form)
-        return HttpResponseRedirect(self.get_success_url())
+        # return HttpResponseRedirect(self.get_success_url())
 
 #Delete(게시물 삭제)
 class PostDelete(DeleteView) :
     model = Post
-    template_name ='delete.html'
-    success_url='/post' # or reverse_lazy('designer') url 이름
+    template_name ='single_pages/delete.html'
+    success_url='/' # or reverse_lazy('designer') url 이름
 
 
 # Update(게시물 수정)
 class PostUpdate(UpdateView):
     model = Post
     fields = ['name', 'head_image', 'hook_text', 'port1', 'port2', ]
-    template_name = 'update.html'
-    success_url = '/post'  # or reverse_lazy('designer') url 이름
+    template_name = 'single_pages/update.html'
+    success_url = '/'  # or reverse_lazy('designer') url 이름
 
     # def form_valid(self, form):
     #     designer = form.save(commit=False)
@@ -100,5 +101,5 @@ class PostUpdate(UpdateView):
 
 
 def port(request):
-    return render(request, 'single_pages/new_port.html')
+    return render(request, 'single_pages/post_detail.html')
 # Create your views here.

@@ -1,4 +1,14 @@
+{% extends 'single_pages/post_form_base.html' %}
+{% load static %}
+{% block header1 %}Create New Port{% endblock %}
+
+{% block header %}<h1>Delete Port</h1>{% endblock %}
+
+{% block main_area %}
+
+
 <form action="" method="post">{% csrf_token %}
-    <p>진짜 삭제할건가요? "{{ object }}"?</p>
+    <p>진짜 삭제할건가요? <br>"{{ object }}"?</p>
     <input type="submit" value="삭제" />
 </form>
+{% endblock %}
