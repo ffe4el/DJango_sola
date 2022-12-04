@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, UpdateView, DetailView, CreateView, DeleteView
 from . import models
 from .models import Post
+from django.urls import reverse
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 
@@ -24,64 +25,67 @@ def about_me(request):
         'single_pages/about_me.html'
     )
 
-# class PostCreate(CreateView):
-#     model= Post
-#     fields=['name', 'head_image', 'hook_text', 'port1', 'port2', 'about_me', "profile_image"]
-#     template_name = 'blog/post_detail.html'
 
-# def new_port(request):
-    #
-    # name = request.GET.get('name')
-    # head_image = request.GET.get('head_image')
-    # hook_text = request.GET.get('head_image')
-    # port1 = request.GET.get('port1')
-    # port2 = request.GET.get('port2')
-    # about_me = request.GET.get('about_me')
-    # profile_image = request.GET.get('profile_image')
-    #
-    #
-    # context = {
-    #
-    #     'name': name,
-    #
-    #     'head_image': head_image,
-    #
-    #     'hook_text': hook_text,
-    #
-    #     'port1': port1,
-    #
-    #     'port2': port2,
-    #
-    #     'about_me': about_me,
-    #
-    #     'profile_image': profile_image
-    #
-    # }
-    # return render(request, 'single_pages/post_detail.html')
-    # return render(request, 'single_pages/post_detail.html', context)
-class PostList(ListView):
-    model= models.Post
-    context_object_name = 'post'
-    template_name = 'single_pages/post_list.html'
-    ordering = '-pk'
+def index(request):
+    posts = Post.objects.all().order_by('-pk')
+    return render(
+        request,
+        'single_pages/post_list.html',
+        {
+            'posts': posts,
+        }
+    )
 
-class PostDetail(DetailView):
-    model = models.Post
-    template_name = 'single_pages/post_detail.html'
+# class PostList(ListView):
+#     model= models.Post
+#     context_object_name = 'post'
+#     template_name = 'single_pages/post_list.html'
+#     ordering = '-pk'
+
+
+def single_post_page(request, pk):
+    post = Post.objects.get(pk=pk)
+
+    return render(
+        request,
+        'single_pages/post_detail.html',
+        {
+            'post': post
+        }
+    )
+
+# class PostDetail(DetailView):
+#     model = models.Post
+#     template_name = 'single_pages/post_detail.html'
+
+# def fbv_create(request):
+#     model = Post
+#     if request.method == 'POST':
+#         print("포트폴리오 생성")
+#         model.name = request.POST['name']
+#         model.head_image = request.FILES['head_image']
+#         model.hook_text = request.POST['hook_text']
+#         model.port1 = request.POST['port1']
+#         model.port2 = request.POST['port2']
+#         model.save()
+#         return redirect(reverse(''))  # reverse는 url의 name으로 연결시켜준다.
+#
+#     return render(request, 'single_pages/post_form.html')
+
 
 class PostCreate(CreateView):
-    model=Post
+    model = Post
     fields =['name', 'head_image', 'hook_text', 'port1', 'port2',]
     success_url = '/'
-    template_name = 'single_pages/post_form.html'
+    # template_name = 'single_pages/post_form.html'
 
-    def form_valid(self, form):
-        post = form.save(commit=False)
-        post.address = form.cleaned_data['head_image']
-
-        post.save()
-        return super().form_valid(form)
-        # return HttpResponseRedirect(self.get_success_url())
+    # def form_valid(self, form):
+    #     post = form.save(commit=False)
+    #     post.address = form.cleaned_data['head_image']
+    #
+    #     post.save()
+    #     return super().form_valid(form)
+    #     return HttpResponseRedirect(self.get_success_url())
 
 #Delete(게시물 삭제)
 class PostDelete(DeleteView) :

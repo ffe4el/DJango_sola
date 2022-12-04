@@ -7,15 +7,15 @@
 
 {% block main_area %}
 
-{% for p in post %}
+{% for p in posts %}
     <div>
     <div class="profile-user-img">
-    {% if p.image %}
-        <img class='profile-user-img-img' src='{{ p.head_image.url }}' hegiht =150 width =150>
+    {% if p.head_image %}
+        <img class='profile-user-img-img' src='{{ p.head_image.url }}'><br><br>
     {% endif %}
     </div>
-    <h5><a href="{% url 'detail' pk=p.pk %}"> {{ p.name }}</a></h5>
-    <h5>{{ d.hook_text }} </h5>
+
+    <h5><a href="{% url 'single_post_page' pk=p.pk %}">{{ p.name }}</a><br>{{ p.hook_text }}</h5>
 
     <a href="{% url 'delete' pk=p.pk %}">
         <button>
@@ -30,6 +30,7 @@
     </a>
     </div>
     <br>
+    <br><br><br><br>
 {% endfor %}
 
 
