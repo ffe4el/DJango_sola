@@ -6,8 +6,12 @@
     <form action="">
     <!-- Masthead Avatar Image-->
     {% if post.head_image %}
-    <img class="img-fluid rounded" src="{{ post.head_image.url }}" alt="{{ post.name }} head_image">
+    <div class="profile-user-img">
+        <img class="profile-user-img-img" src="{{ post.head_image.url }}" alt="profile-user-img">
+    </div>
     {% endif %}
+    <br>
+
     <!-- Masthead Heading-->
     {% if post.name %}
     <h1 class="masthead-heading text-uppercase mb-0">{{ post.name }}</h1>
@@ -100,7 +104,7 @@
         <div class="divider-custom-line"></div>
     </div>
     <!-- Portfolio Modal - Image-->
-    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." />
+    <img class="img-fluid rounded mb-5" src="{% static 'single_pages/bootstrap/assets/img/portfolio/machine.png' %}" alt="..." />
     <!-- Portfolio Modal - Text-->
     {% if post.port1 %}
     <p class="mb-4">{{ post.port1 }}<br></p>

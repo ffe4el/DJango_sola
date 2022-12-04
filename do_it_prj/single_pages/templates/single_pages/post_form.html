@@ -5,12 +5,12 @@
 {% block header %}<h1>Create New Port</h1>{% endblock %}
 
 {% block main_area %}
-<form action="{% url 'create' %}"method="post" enctype="'multipart/form-data">{%  csrf_token %}
+<form action="{% url 'create' %}" method="POST" enctype="'multipart/form-data">{%  csrf_token %}
     <table>
         <p>포트폴리오 생성 페이지</p>
     {{ form.as_p }}
     </table>
     <br>
-<button type="submit" class="btn btn primary float-right">Create</button>
+    <button type="submit" class="btn btn primary float-right">Create</button>
 </form>
 {% endblock %}
