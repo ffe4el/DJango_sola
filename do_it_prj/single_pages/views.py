@@ -75,17 +75,17 @@ def single_post_page(request, pk):
 
 class PostCreate(CreateView):
     model = Post
-    fields =['name', 'head_image', 'hook_text', 'port1', 'port2',]
+    fields =['name', 'head_image', 'hook_text', 'port1', 'port2']
     success_url = '/'
     # template_name = 'single_pages/post_form.html'
 
-    # def form_valid(self, form):
-    #     post = form.save(commit=False)
-    #     post.address = form.cleaned_data['head_image']
-    #
-    #     post.save()
-    #     return super().form_valid(form)
-    #     return HttpResponseRedirect(self.get_success_url())
+    def form_valid(self, form):
+        post = form.save(commit=False)
+        post.address = form.cleaned_data['head_image']
+
+        post.save()
+        return super().form_valid(form)
+        return HttpResponseRedirect(self.get_success_url())
 
 #Delete(게시물 삭제)
 class PostDelete(DeleteView) :
