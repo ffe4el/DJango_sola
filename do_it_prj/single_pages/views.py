@@ -18,6 +18,12 @@ def about_me(request):
         'single_pages/about_me.html'
     )
 
+def about_me(request):
+    return render(
+        request,
+        'single_pages/about_me.html'
+    )
+
 # class PostCreate(CreateView):
 #     model= Post
 #     fields=['name', 'head_image', 'hook_text', 'port1', 'port2', 'about_me', "profile_image"]
