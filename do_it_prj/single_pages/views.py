@@ -19,11 +19,6 @@ def about_me(request):
         'single_pages/about_me.html'
     )
 
-def about_me(request):
-    return render(
-        request,
-        'single_pages/about_me.html'
-    )
 
 
 def index(request):
@@ -75,7 +70,7 @@ def single_post_page(request, pk):
 
 class PostCreate(CreateView):
     model = Post
-    fields =['name', 'head_image', 'hook_text', 'port1', 'port2']
+    fields =['name', 'head_image', 'hook_text', 'port1', 'port2' ,'port3', 'port4','port5', 'port6']
     success_url = '/'
     # template_name = 'single_pages/post_form.html'
 
@@ -97,7 +92,7 @@ class PostDelete(DeleteView) :
 # Update(게시물 수정)
 class PostUpdate(UpdateView):
     model = Post
-    fields = ['name', 'head_image', 'hook_text', 'port1', 'port2', ]
+    fields = ['name', 'head_image', 'hook_text', 'port1', 'port2', 'port3', 'port4','port5', 'port6', ]
     template_name = 'single_pages/update.html'
     success_url = '/'  # or reverse_lazy('designer') url 이름
 
@@ -110,6 +105,6 @@ class PostUpdate(UpdateView):
 
 
 
-def port(request):
-    return render(request, 'single_pages/post_detail.html')
+# def port(request):
+#     return render(request, 'single_pages/post_detail.html')
 # Create your views here.
