@@ -69,18 +69,20 @@ def single_post_page(request, pk):
 
 
 class PostCreate(CreateView):
-    model = Post
-    fields =['name', 'head_image', 'hook_text', 'port1', 'port2' ,'port3', 'port4','port5', 'port6']
+    model = models.Post
+    fields = ['name', 'head_image', 'hook_text', 'port1_title', 'port1', 'port1_img', 'port2_title', 'port2',
+              'port2_img', 'port3_title', 'port3', 'port3_img','port4_title', 'port4', 'port4_img', 'port5_title',
+              'port5', 'port5_img', 'port6_title', 'port6', 'port6_img', 'profile_image', 'about_me', ]
     success_url = '/'
     # template_name = 'single_pages/post_form.html'
 
-    def form_valid(self, form):
-        post = form.save(commit=False)
-        post.address = form.cleaned_data['head_image']
-
-        post.save()
-        return super().form_valid(form)
-        return HttpResponseRedirect(self.get_success_url())
+    # def form_valid(self, form):
+    #     post = form.save(commit=False)
+    #     post.address = form.cleaned_data['head_image']
+    #
+    #     post.save()
+    #     return super().form_valid(form)
+    #     return HttpResponseRedirect(self.get_success_url())
 
 #Delete(게시물 삭제)
 class PostDelete(DeleteView) :
@@ -92,7 +94,8 @@ class PostDelete(DeleteView) :
 # Update(게시물 수정)
 class PostUpdate(UpdateView):
     model = Post
-    fields = ['name', 'head_image', 'hook_text', 'port1', 'port2', 'port3', 'port4','port5', 'port6', ]
+    fields = ['name', 'head_image', 'hook_text', 'port1_title','port1','port1_img', 'port2_title','port2', 'port2_img','port3_title','port3','port3_img',
+              'port4_title','port4','port4_img','port5_title','port5','port5_img', 'port6_title', 'port6','port6_img','profile_image', 'about_me',]
     template_name = 'single_pages/update.html'
     success_url = '/'  # or reverse_lazy('designer') url 이름
 

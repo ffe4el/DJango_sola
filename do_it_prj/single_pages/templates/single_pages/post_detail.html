@@ -4,109 +4,155 @@
 <!-- Masthead-->
 {% block head_area %}
     <form action="">
-    <!-- Masthead Avatar Image-->
-    {% if post.head_image %}
-    <div class="profile-user-img">
-        <img class="profile-user-img-img" src="{{ post.head_image.url }}" alt="profile-user-img">
-    </div>
-    {% endif %}
-    <br>
+        <!-- Masthead Avatar Image-->
+        {% if post.head_image %}
+            <div class="profile-user-img">
+                <img class="profile-user-img-img" src="{{ post.head_image.url }}" alt="profile-user-img">
+            </div>
+        {% endif %}
+        <br>
 
-    <!-- Masthead Heading-->
-    {% if post.name %}
-    <h1 class="masthead-heading text-uppercase mb-0">{{ post.name }}</h1>
-    {% endif %}
-    <!-- Icon Divider-->
-    <div class="divider-custom divider-light">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-        <div class="divider-custom-line"></div>
-    </div>
-    <!-- Masthead Subheading-->
-    {% if post.hook_text %}
-    <a class="masthead-subheading font-weight-light mb-0">{{ post.hook_text }}</a>
-    {% endif %}
+        <!-- Masthead Heading-->
+        {% if post.name %}
+            <h1 class="masthead-heading text-uppercase mb-0">{{ post.name }}</h1>
+        {% endif %}
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Subheading-->
+        {% if post.hook_text %}
+            <a class="masthead-subheading font-weight-light mb-0">{{ post.hook_text }}</a>
+        {% endif %}
     </form>
 {% endblock %}
 
 <!-- Portfolio Section-->
 {% block port_area %}
     <!-- Portfolio Item 1-->
-    <div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+    {% if post.port1 %}
+        <div class="col-md-6 col-lg-4 mb-5">
+            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                {% if post.port1_img %}
+                    <img class="img-fluid" src="{{ post.port1_img.url }}" alt="..."/>
+                {% else %}
+                    <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
+                {% endif %}
             </div>
-            <img class="img-fluid" src="{% static 'single_pages/bootstrap/assets/img/portfolio/openpyxl.png' %}" alt="..." />
         </div>
-    </div>
+    {% endif %}
     <!-- Portfolio Item 2-->
-    <div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+    {% if post.port2 %}
+        <div class="col-md-6 col-lg-4 mb-5">
+            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                {% if post.port2_img %}
+                    <img class="img-fluid" src="{{ post.port2_img.url }}" alt="..."/>
+                {% else %}
+                    <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
+                {% endif %}
             </div>
-            <img class="img-fluid" src="{% static 'single_pages/bootstrap/assets/img/portfolio/pygame.png' %}" alt="..." />
         </div>
-    </div>
+    {% endif %}
     <!-- Portfolio Item 3-->
-    <div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+    {% if post.port3 %}
+        <div class="col-md-6 col-lg-4 mb-5">
+            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                {% if post.port3_img %}
+                    <img class="img-fluid" src="{{ post.port3_img.url }}" alt="..."/>
+                {% else %}
+                    <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
+                {% endif %}
             </div>
-            <img class="img-fluid" src="{% static 'single_pages/bootstrap/assets/img/portfolio/qgis.png' %}" alt="..." />
         </div>
-    </div>
+    {% endif %}
     <!-- Portfolio Item 4-->
-    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+    {% if post.port4 %}
+        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                {% if post.port4_img %}
+                    <img class="img-fluid" src="{{ post.port4_img.url }}" alt="..."/>
+                {% else %}
+                    <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
+                {% endif %}
             </div>
-            <img class="img-fluid" src="{% static 'single_pages/bootstrap/assets/img/portfolio/teachable.png' %}" alt="..." />
         </div>
-    </div>
+    {% endif %}
     <!-- Portfolio Item 5-->
-    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+    {% if post.port5 %}
+        <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                {% if post.port5_img %}
+                    <img class="img-fluid" src="{{ post.port5_img.url }}" alt="..."/>
+                {% else %}
+                    <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
+                {% endif %}
             </div>
-            <img class="img-fluid" src="{% static 'single_pages/bootstrap/assets/img/portfolio/arduino.png' %}" alt="..." />
         </div>
-    </div>
+    {% endif %}
     <!-- Portfolio Item 6-->
-    <div class="col-md-6 col-lg-4">
-        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+    {% if post.port6 %}
+        <div class="col-md-6 col-lg-4">
+            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                {% if post.port6_img %}
+                    <img class="img-fluid" src="{{ post.port6_img.url }}" alt="..."/>
+                {% else %}
+                    <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
+                {% endif %}
             </div>
-            <img class="img-fluid" src="{% static 'single_pages/bootstrap/assets/img/portfolio/machine.png' %}" alt="..." />
         </div>
-    </div>
+    {% endif %}
 {% endblock %}
 
 {% block port1 %}
     <!-- Portfolio Modal - Title-->
     {% if post.port1 %}
-    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Portfolio1</h2>
-    <!-- Icon Divider-->
-    <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-        <div class="divider-custom-line"></div>
-    </div>
-    <!-- Portfolio Modal - Image-->
-    <img class="img-fluid rounded mb-5" src="{% static 'single_pages/bootstrap/assets/img/portfolio/machine.png' %}" alt="..." />
-    <!-- Portfolio Modal - Text-->
+        <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{{ post.port1_title }}</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Portfolio Modal - Image-->
+        {% if post.port1_img %}
+            <img class="img-fluid" src="{{ post.port1_img.url }}" alt="..."/>
+        {% else %}
+            <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
+        {% endif %}
+        <!-- Portfolio Modal - Text-->
 
-    <p class="mb-4">{{ post.port1 }}<br></p>
+        <p class="mb-4">{{ post.port1 }}<br></p>
 
-    <button class="btn btn-primary" data-bs-dismiss="modal">
-        <i class="fas fa-xmark fa-fw"></i>
-        Close Window
-    </button>
+        <button class="btn btn-primary" data-bs-dismiss="modal">
+            <i class="fas fa-xmark fa-fw"></i>
+            Close Window
+        </button>
     {% endif %}
 {% endblock %}
 
@@ -114,21 +160,25 @@
 {% block port2 %}
     <!-- Portfolio Modal - Title-->
     {% if post.port2 %}
-    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Portfolio2</h2>
-    <!-- Icon Divider-->
-    <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-        <div class="divider-custom-line"></div>
-    </div>
-    <!-- Portfolio Modal - Image-->
-    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cake.png" alt="..." />
-    <!-- Portfolio Modal - Text-->
-    <p class="mb-4">{{ post.port2 }}</p>
-    <button class="btn btn-primary" data-bs-dismiss="modal">
-        <i class="fas fa-xmark fa-fw"></i>
-        Close Window
-    </button>
+        <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{{ post.port2_title }}</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Portfolio Modal - Image-->
+        {% if post.port2_img %}
+            <img class="img-fluid" src="{{ post.port2_img.url }}" alt="..."/>
+        {% else %}
+            <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
+        {% endif %}
+        <!-- Portfolio Modal - Text-->
+        <p class="mb-4">{{ post.port2 }}</p>
+        <button class="btn btn-primary" data-bs-dismiss="modal">
+            <i class="fas fa-xmark fa-fw"></i>
+            Close Window
+        </button>
     {% endif %}
 {% endblock %}
 
@@ -136,21 +186,25 @@
 {% block port3 %}
     <!-- Portfolio Modal - Title-->
     {% if post.port3 %}
-    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Portfolio3</h2>
-    <!-- Icon Divider-->
-    <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-        <div class="divider-custom-line"></div>
-    </div>
-    <!-- Portfolio Modal - Image-->
-    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png" alt="..." />
-    <!-- Portfolio Modal - Text-->
-    <p class="mb-4">{{ post.port3 }}</p>
-    <button class="btn btn-primary" data-bs-dismiss="modal">
-        <i class="fas fa-xmark fa-fw"></i>
-        Close Window
-    </button>
+        <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{{ post.port3_title }}</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Portfolio Modal - Image-->
+        {% if post.port3_img %}
+            <img class="img-fluid" src="{{ post.port3_img.url }}" alt="..."/>
+        {% else %}
+            <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
+        {% endif %}
+        <!-- Portfolio Modal - Text-->
+        <p class="mb-4">{{ post.port3 }}</p>
+        <button class="btn btn-primary" data-bs-dismiss="modal">
+            <i class="fas fa-xmark fa-fw"></i>
+            Close Window
+        </button>
     {% endif %}
 {% endblock %}
 
@@ -158,21 +212,25 @@
 {% block port4 %}
     <!-- Portfolio Modal - Title-->
     {% if post.port4 %}
-    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">portfolio4</h2>
-    <!-- Icon Divider-->
-    <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-        <div class="divider-custom-line"></div>
-    </div>
-    <!-- Portfolio Modal - Image-->
-    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/game.png" alt="..." />
-    <!-- Portfolio Modal - Text-->
-    <p class="mb-4">{{ post.port4 }}</p>
-    <button class="btn btn-primary" data-bs-dismiss="modal">
-        <i class="fas fa-xmark fa-fw"></i>
-        Close Window
-    </button>
+        <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{{ post.port4_title }}</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Portfolio Modal - Image-->
+        {% if post.port4_img %}
+            <img class="img-fluid" src="{{ post.port4_img.url }}" alt="..."/>
+        {% else %}
+            <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
+        {% endif %}
+        <!-- Portfolio Modal - Text-->
+        <p class="mb-4">{{ post.port4 }}</p>
+        <button class="btn btn-primary" data-bs-dismiss="modal">
+            <i class="fas fa-xmark fa-fw"></i>
+            Close Window
+        </button>
     {% endif %}
 {% endblock %}
 
@@ -180,49 +238,60 @@
 {% block port5 %}
     <!-- Portfolio Modal - Title-->
     {% if post.port5 %}
-    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Portfolio5</h2>
-    <!-- Icon Divider-->
-    <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-        <div class="divider-custom-line"></div>
-    </div>
-    <!-- Portfolio Modal - Image-->
-    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png" alt="..." />
-    <!-- Portfolio Modal - Text-->
-    <p class="mb-4">{{ post.port5 }}</p>
-    <button class="btn btn-primary" data-bs-dismiss="modal">
-        <i class="fas fa-xmark fa-fw"></i>
-        Close Window
-    </button>
+        <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{{ post.port5_title }}</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Portfolio Modal - Image-->
+        {% if post.port5_img %}
+            <img class="img-fluid" src="{{ post.port5_img.url }}" alt="..."/>
+        {% else %}
+            <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
+        {% endif %}
+        <!-- Portfolio Modal - Text-->
+        <p class="mb-4">{{ post.port5 }}</p>
+        <button class="btn btn-primary" data-bs-dismiss="modal">
+            <i class="fas fa-xmark fa-fw"></i>
+            Close Window
+        </button>
     {% endif %}
 {% endblock %}
 
 {% block port6 %}
     <!-- Portfolio Modal - Title-->
     {% if post.port6 %}
-    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Portfolio6</h2>
-    <!-- Icon Divider-->
-    <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-        <div class="divider-custom-line"></div>
-    </div>
-    <!-- Portfolio Modal - Image-->
-    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png" alt="..." />
-    <!-- Portfolio Modal - Text-->
-    <p class="mb-4">{{ post.port6 }}</p>
-    <button class="btn btn-primary" data-bs-dismiss="modal">
-        <i class="fas fa-xmark fa-fw"></i>
-        Close Window
-    </button>
+        <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{{ post.port6_title }}</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Portfolio Modal - Image-->
+        {% if post.port6_img %}
+            <img class="img-fluid" src="{{ post.port6_img.url }}" alt="..."/>
+        {% else %}
+            <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
+        {% endif %}
+        <!-- Portfolio Modal - Text-->
+        <p class="mb-4">{{ post.port6 }}</p>
+        <button class="btn btn-primary" data-bs-dismiss="modal">
+            <i class="fas fa-xmark fa-fw"></i>
+            Close Window
+        </button>
     {% endif %}
 {% endblock %}
 
 {% block mypic_area %}
     <div class="row">
-        <div align="center"><p class="lead"><br><img src="{% static 'single_pages/bootstrap/assets/img/portfolio/sola.png' %}" width='300' height='300' alt="..." /><br><br><br>
-        {{ post.about_me }}</p></div>
+        <div align="center"><p class="lead"><br>
+            {% if post.profile_image %}
+            <img src="{{ post.profile_image.url }}" width='300' height='300' alt="..."/>
+            {% endif %}
+            <br><br><br>{{ post.about_me }}</p></div>
     </div>
 {% endblock %}
 
