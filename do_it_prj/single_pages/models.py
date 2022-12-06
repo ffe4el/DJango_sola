@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class Post(models.Model):
     name = models.CharField(max_length=30) #제목은 문자를 담는 필드로, 최대 30글자까지
-    head_image = models.ImageField(upload_to='single_pages/images/avatar')
+    head_image = models.ImageField(upload_to='single_pages/images/avatar', blank=True)
     hook_text = models.CharField(max_length=50)
     port1_title = models.CharField(max_length=30, default='')
     port1 = models.TextField(blank=True) #내용은 문자열의 길이 제한이 없는 텍스트 필드

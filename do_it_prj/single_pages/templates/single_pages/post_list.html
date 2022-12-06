@@ -7,35 +7,35 @@
 
 {% block main_area %}
 
-    {% if post_list.exists %}
-        {% for p in posts %}
-            <div>
+{% if posts.exists %}
+    {% for p in posts %}
+        <div>
+            {% if p.head_image %}
                 <div class="profile-user-img">
-                    {% if p.head_image %}
-                        <img class='profile-user-img-img' src='{{ p.head_image.url }}'><br><br>
-                    {% endif %}
+                    <img class='profile-user-img-img' src='{{ p.head_image.url }}' alt="profile-user-img"/><br><br>
                 </div>
+            {% endif %}
+            <h5><a href="{% url 'single_post_page' pk=p.pk %}">{{ p.name }}</a><br>{{ p.hook_text }}</h5>
 
-                <h5><a href="{% url 'single_post_page' pk=p.pk %}">{{ p.name }}</a><br>{{ p.hook_text }}</h5>
+            <a href="{% url 'delete' pk=p.pk %}">
+                <button>
+                    삭제
+                </button>
+            </a>
 
-                <a href="{% url 'delete' pk=p.pk %}">
-                    <button>
-                        삭제
-                    </button>
-                </a>
+            <a href="{% url 'update' pk=p.pk %}">
+                <button>
+                    수정
+                </button>
+            </a>
+        </div>
+        <br>
+        <br><br><br><br>
+    {% endfor %}
+{% else %}
+<h3>아직 게시물이 없습니다.</h3>
+{% endif %}
 
-                <a href="{% url 'update' pk=p.pk %}">
-                    <button>
-                        수정
-                    </button>
-                </a>
-            </div>
-            <br>
-            <br><br><br><br>
-        {% endfor %}
-    {% else %}
-        <h3>아직 게시물이 없습니다.</h3>
-    {% endif %}
 
 
     <br>

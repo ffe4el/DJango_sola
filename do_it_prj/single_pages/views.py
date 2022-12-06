@@ -69,7 +69,7 @@ def single_post_page(request, pk):
 
 
 class PostCreate(CreateView):
-    model = models.Post
+    model = Post
     fields = ['name', 'head_image', 'hook_text', 'port1_title', 'port1', 'port1_img', 'port2_title', 'port2',
               'port2_img', 'port3_title', 'port3', 'port3_img','port4_title', 'port4', 'port4_img', 'port5_title',
               'port5', 'port5_img', 'port6_title', 'port6', 'port6_img', 'profile_image', 'about_me', ]
