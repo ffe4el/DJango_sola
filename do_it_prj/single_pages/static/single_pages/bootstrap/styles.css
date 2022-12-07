@@ -11507,3 +11507,14 @@ html {
 .copyright {
   background-color: #473938;
 }
+
+#down:hover {
+	position : relative;
+	left : 20px;
+	top : 20px;
+}
+#up:hover {
+	position : relative;
+	right : 20px;
+	bottom : 20px;
+}
