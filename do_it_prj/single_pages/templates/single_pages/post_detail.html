@@ -14,7 +14,7 @@
 
         <!-- Masthead Heading-->
         {% if post.name %}
-            <h1 class="masthead-heading text-uppercase mb-0">{{ post.name }}</h1>
+            <h1 class="masthead-heading text-uppercase mb-0 threeDEffect">{{ post.name }}</h1>
         {% endif %}
         <!-- Icon Divider-->
         <div class="divider-custom divider-light">
@@ -24,7 +24,7 @@
         </div>
         <!-- Masthead Subheading-->
         {% if post.hook_text %}
-            <a class="masthead-subheading font-weight-light mb-0">{{ post.hook_text }}</a>
+            <h3 class="masthead-subheading font-weight-light mb-0">{{ post.hook_text }}</h3>
         {% endif %}
     </form>
 {% endblock %}
@@ -287,11 +287,16 @@
 
 {% block mypic_area %}
     <div class="row">
-        <div align="center"><p class="lead"><br>
+        <div align="center">
+            <p class="lead"><br>
             {% if post.profile_image %}
-                <img src="{{ post.profile_image.url }}" width='300' height='300' alt="..."/>
+                <div class="profile-user-img">
+                    <img class='profile-user-img-img' src='{{ post.profile_image.url }}' alt="profile-user-img"/><br><br>
+                </div>
             {% endif %}
-            <br><br><br>{{ post.about_me }}</p></div>
+            <br><br>{{ post.about_me }}
+            </p>
+        </div>
     </div>
 {% endblock %}
 
