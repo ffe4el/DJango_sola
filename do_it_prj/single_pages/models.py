@@ -1,5 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
+from markdownx.models import MarkdownxField
+from markdownx.utils import markdown
 
 
 class Post(models.Model):
@@ -7,22 +8,22 @@ class Post(models.Model):
     head_image = models.ImageField(upload_to='single_pages/images/avatar', blank=True)
     hook_text = models.CharField(max_length=50)
     port1_title = models.CharField(max_length=30, default='')
-    port1 = models.TextField(blank=True) #내용은 문자열의 길이 제한이 없는 텍스트 필드
+    port1 = MarkdownxField()
     port1_img = models.ImageField(upload_to='single_pages/images/portfolio', blank=True)
     port2_title = models.CharField(max_length=30, default='')
-    port2 = models.TextField(blank=True)
+    port2 = MarkdownxField()
     port2_img = models.ImageField(upload_to='single_pages/images/portfolio', blank=True)
     port3_title = models.CharField(max_length=30, default='')
-    port3 = models.TextField(blank=True)
+    port3 = MarkdownxField()
     port3_img = models.ImageField(upload_to='single_pages/images/portfolio', blank=True)
     port4_title = models.CharField(max_length=30, default='')
-    port4 = models.TextField(blank=True)
+    port4 = MarkdownxField()
     port4_img = models.ImageField(upload_to='single_pages/images/portfolio', blank=True)
     port5_title = models.CharField(max_length=30, default='')
-    port5 = models.TextField(blank=True)
+    port5 = MarkdownxField()
     port5_img = models.ImageField(upload_to='single_pages/images/portfolio', blank=True)
     port6_title = models.CharField(max_length=30, default='')
-    port6 = models.TextField(blank=True)
+    port6 = MarkdownxField()
     port6_img = models.ImageField(upload_to='single_pages/images/portfolio', blank=True)
     about_me = models.TextField(max_length=100, default='')
     profile_image = models.ImageField(upload_to='single_pages/static/single_pages/bootstrap/asseets/img/avatar1/',blank=True)
@@ -34,4 +35,22 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return f'/post/{self.pk}/'
+
+    def get_port1_markdown(self):
+        return markdown(self.port1)
+
+    def get_port2_markdown(self):
+        return markdown(self.port2)
+
+    def get_port3_markdown(self):
+        return markdown(self.port3)
+
+    def get_port4_markdown(self):
+        return markdown(self.port4)
+
+    def get_port5_markdown(self):
+        return markdown(self.port5)
+
+    def get_port6_markdown(self):
+        return markdown(self.port6)
 # Create your models here.

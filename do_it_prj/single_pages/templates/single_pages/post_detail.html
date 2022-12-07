@@ -147,7 +147,7 @@
         {% endif %}
         <!-- Portfolio Modal - Text-->
 
-        <p class="mb-4">{{ post.port1 }}<br></p>
+        <p class="mb-4">{{ post.get_port1_markdown | safe }}<br></p>
 
         <button class="btn btn-primary" data-bs-dismiss="modal">
             <i class="fas fa-xmark fa-fw"></i>
@@ -174,7 +174,7 @@
             <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
         {% endif %}
         <!-- Portfolio Modal - Text-->
-        <p class="mb-4">{{ post.port2 }}</p>
+        <p class="mb-4">{{ post.get_port2_markdown | safe }}</p>
         <button class="btn btn-primary" data-bs-dismiss="modal">
             <i class="fas fa-xmark fa-fw"></i>
             Close Window
@@ -200,7 +200,7 @@
             <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
         {% endif %}
         <!-- Portfolio Modal - Text-->
-        <p class="mb-4">{{ post.port3 }}</p>
+        <p class="mb-4">{{ post.get_port3_markdown | safe }}</p>
         <button class="btn btn-primary" data-bs-dismiss="modal">
             <i class="fas fa-xmark fa-fw"></i>
             Close Window
@@ -226,7 +226,7 @@
             <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
         {% endif %}
         <!-- Portfolio Modal - Text-->
-        <p class="mb-4">{{ post.port4 }}</p>
+        <p class="mb-4">{{ post.get_port4_markdown | safe }}</p>
         <button class="btn btn-primary" data-bs-dismiss="modal">
             <i class="fas fa-xmark fa-fw"></i>
             Close Window
@@ -252,7 +252,7 @@
             <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
         {% endif %}
         <!-- Portfolio Modal - Text-->
-        <p class="mb-4">{{ post.port5 }}</p>
+        <p class="mb-4">{{ post.get_port5_markdown | safe }}</p>
         <button class="btn btn-primary" data-bs-dismiss="modal">
             <i class="fas fa-xmark fa-fw"></i>
             Close Window
@@ -277,7 +277,7 @@
             <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
         {% endif %}
         <!-- Portfolio Modal - Text-->
-        <p class="mb-4">{{ post.port6 }}</p>
+        <p class="mb-4">{{ post.get_port6_markdown | safe }}</p>
         <button class="btn btn-primary" data-bs-dismiss="modal">
             <i class="fas fa-xmark fa-fw"></i>
             Close Window
