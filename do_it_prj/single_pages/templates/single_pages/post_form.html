@@ -1,15 +1,14 @@
 {% extends 'single_pages/post_form_base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block header1 %}Create New Port{% endblock %}
 
 {% block header %}<h1>Create New Port</h1>{% endblock %}
 
 {% block main_area %}
     <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
-        <table>
             <p>포트폴리오 생성 페이지</p>
-            {{ form.as_p }}
-        </table>
+            {{ form | crispy}}
         <br>
         <button type="submit" class="btn btn-primary float-right">Create</button>
     </form>
