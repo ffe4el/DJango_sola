@@ -10,7 +10,7 @@
 {{ object }} 의 수정 페이지 <br><br>
 <form action="" method="POST"  enctype="multipart/form-data">{% csrf_token %}
     {{ form | crispy }}
-    <input type="submit" value="Update" />
+    <input onclick="update()" type="submit" value="Update" />
 </form>
 {{ form.media }}
 
