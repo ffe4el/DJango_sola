@@ -1,0 +1,44 @@
+:root {
+--bs-font-sans-serif: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.menu ul{
+	background:#eee;
+	display:none;
+	margin:0;
+	padding:0;
+	width:250px;
+	position:absolute;
+	top:35px;
+	left:20px;
+	border:solid 1px #ddd;
+}
+.menu li:hover ul{
+	display:block;
+}
+.menu ul li{
+	float:none;
+	margin:-4px 0 -20px 0;
+	padding:0;
+}
+#header h1{
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-size:32px;
+	margin-top:35px;
+}
+#featured-section{
+	padding-bottom:30px;
+	padding-top:35px;
+}
+.portfolio-item{
+	float:left;
+	width:280px;
+	height:200px;
+	margin:0 0 60px 50px;
+}
+.first{
+	margin-left:0;
+}
+#footer{
+	margin-right:-3px;
+}

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'markdownx',
     'blog',
+    'homepage',
     'single_pages',
 ]
 

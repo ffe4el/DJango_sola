@@ -22,7 +22,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('blog/', include('blog.urls')),
     path("admin/", admin.site.urls),
-    path('', include('single_pages.urls')),
+    path('single_pages/',include('single_pages.urls')),
+    path('', include('homepage.urls')),
     path('markdownx/', include('markdownx.urls')),
 ]
 
