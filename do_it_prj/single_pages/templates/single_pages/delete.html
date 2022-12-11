@@ -5,9 +5,13 @@
 {% block header %}<h1>Delete Port</h1>{% endblock %}
 
 {% block main_area %}
+<script>
+    alert('삭제 버튼을 클릭하였습니다.')
+</script>
 
 <form action="" method="post">{% csrf_token %}
     <p>진짜 삭제할건가요? <br>"{{ object }}"?</p>
     <input type="submit" value="삭제" />
+
 </form>
 {% endblock %}
