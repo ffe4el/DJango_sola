@@ -1,42 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Rokono | Services</title>
-<meta charset="utf-8">
-<link type="text/css" rel="stylesheet" href="style/style.css" />
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<!--[if IE 6]>
-<style>body { behavior: url("style/ie6-hover-fix.htc"); }</style>
-<script type="text/javascript" src="js/ie6-transparency.js"></script>
-<script>DD_belatedPNG.fix('.circle, .read-more, .blue-bullets li, #sidebar .sidebar-button');</script>
-<link type="text/css" rel="stylesheet" href="style/ie6.css" />
-<![endif]-->
-<!--[if IE 7]><link type="text/css" rel="stylesheet" href="style/ie7.css" /><![endif]-->
-</head>
-<body class="page">
-<div id="wrap">
-  <div id="header">
-    <h1><a href="#">Rokono</a></h1>
-    <div id="nav">
-      <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li class="current_page_item"><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a>
-          <ul class="sub-menu">
-            <li><a href="project.html">Latest Project</a></li>
-            <li><a href="#">Branding</a></li>
-            <li><a href="#">Online Marketing</a></li>
-            <li><a href="#">Search Engine Optimization</a></li>
-            <li><a href="#">Web Design</a></li>
-          </ul>
-        </li>
-        <li><a href="articles.html">Articles</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <!--end nav-->
-  </div>
-  <!--end header-->
+{% extends 'homepage/basetem.html' %}
+{% load static %}
+
+{#{% block check1 %}{% endblock %}#}
+{#{% block check2 %}class="current_page_item"{% endblock %}#}
+{#{% block check3 %}{% endblock %}#}
+{#{% block check4 %}{% endblock %}#}
+{#{% block check5 %}{% endblock %}#}
+
+
+{% block main_area %}
   <div id="main">
     <div id="content">
       <p>[ADD OVERVIEW]</p>
@@ -67,14 +39,4 @@
     <!--end sidebar-->
   </div>
   <!--end main-->
-  <div id="footer">
-    <p class="copyright">Copyright &copy; <a href="#">Domain Name</a> - All Rights Reserved / Design By <a target="_blank" href="http://www.chris-creed.com/">Chris Creed</a></p>
-    <p class="twitter"><a href="#">Follow Us On Twitter &rarr;</a></p>
-  </div>
-  <!--end footer-->
-</div>
-<!--end wrap-->
-<div class="cache-images"> <img src="images/black-button-bg.png" width="0" height="0" alt="" /> </div>
-<!--end cache-images-->
-<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
-</html>
+{% endblock %}
