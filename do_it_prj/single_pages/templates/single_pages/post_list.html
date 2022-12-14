@@ -15,8 +15,9 @@
                     <img class='profile-user-img-img' src='{{ p.head_image.url }}' alt="profile-user-img"/><br><br>
                 </div>
             {% endif %}
-            <h5 style="cursor: copy"><a href="{% url 'single_post_page' pk=p.pk %}">{{ p.name }}</a><br>{{ p.hook_text }}</h5>
-
+            <br>
+            <h4 style="cursor: copy"><a href="{% url 'single_post_page' pk=p.pk %}">{{ p.name }}</a><br><br>{{ p.hook_text }}</h4>
+            <br>
             <a href="{% url 'delete' pk=p.pk %}">
                 <button>
                     삭제

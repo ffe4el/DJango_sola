@@ -24,7 +24,7 @@
         </div>
         <!-- Masthead Subheading-->
         {% if post.hook_text %}
-            <h3 class="masthead-subheading font-weight-light mb-0">{{ post.hook_text }}</h3>
+            <h2 class="masthead-subheading font-weight-light mb-0">{{ post.hook_text }}</h2>
         {% endif %}
     </form>
 {% endblock %}
@@ -294,7 +294,7 @@
                     <img class='profile-user-img-img' src='{{ post.profile_image.url }}' alt="profile-user-img"/><br><br>
                 </div>
             {% endif %}
-            <br><br>{{ post.about_me }}
+            <br><br>{{ post.get_about_me_markdown | safe }}
             </p>
         </div>
     </div>

@@ -25,7 +25,7 @@ class Post(models.Model):
     port6_title = models.CharField(max_length=30, default='')
     port6 = MarkdownxField()
     port6_img = models.ImageField(upload_to='single_pages/images/portfolio', blank=True)
-    about_me = models.TextField(max_length=100, default='')
+    about_me = MarkdownxField()
     profile_image = models.ImageField(upload_to='single_pages/static/single_pages/bootstrap/asseets/img/avatar1/',blank=True)
     created_at = models.DateTimeField(auto_now_add=True)  # 작성일은 월일시분초까지 기록할 수 있게 해주는 타임 필드
     update_at = models.DateTimeField(auto_now=True)
@@ -53,4 +53,7 @@ class Post(models.Model):
 
     def get_port6_markdown(self):
         return markdown(self.port6)
+
+    def get_about_me_markdown(self):
+        return markdown(self.about_me)
 # Create your models here.

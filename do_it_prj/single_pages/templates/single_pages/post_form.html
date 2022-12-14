@@ -6,13 +6,13 @@
 {% block header %}<h1>Create New Port</h1>{% endblock %}
 
 {% block main_area %}
-    <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
-            <p>포트폴리오 생성 페이지</p>
-            {{ form | crispy}}
-        <br>
-        <button type="submit" class="btn btn-primary float-right">Create</button>
-    </form>
-    {{ form.media }}
+<form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    <h2>포트폴리오 생성 페이지</h2>
+    {{ form | crispy }}
+    <br>
+    <button type="submit" class="btn btn-primary float-right">Create</button>
+</form>
+{{ form.media }}
     {#    <form action="{% url 'fbv_create' %}" method="POST" enctype = "multipart/form-data" >#}
     {#    {% csrf_token %}#}
     {#    <p>디자이너 생성 페이지</p><br>#}
