@@ -2,57 +2,63 @@
 {% load static %}
 <html lang="en">
 <head>
-<title>Joen Tree</title>
-<meta charset="utf-8">
-<link type="text/css" rel="stylesheet" href="{% static 'homepage/bootstrap/style/style.css' %}" />
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<!--[if IE 6]>-->
-<style>body { behavior: url("style/ie6-hover-fix.htc"); }</style>
+    <title>Joen Tree</title>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="{% static 'homepage/bootstrap/style/style.css' %}"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <!--[if IE 6]>-->
+    <style>body {
+        behavior: url("style/ie6-hover-fix.htc");
+    }</style>
 
-<!--Font Awesome icons (free version)-->
-<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-<!-- Google fonts-->
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <!--Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css">
 
-<script type="text/javascript" src="js/ie6-transparency.js"></script>
-<script>DD_belatedPNG.fix('.circle, .read-more, .blue-bullets li, #sidebar .sidebar-button');</script>
-<link rel="stylesheet" href="{% static 'homepage/bootstrap/style/ie6.css' %}" >
-<![endif]-->
-<!--[if IE 7]><link type="text/css" rel="stylesheet" href="{% static 'homepage/bootstrap/styles/ie7.css' %}"><![endif]-->
+    <script type="text/javascript" src="js/ie6-transparency.js"></script>
+    <script>DD_belatedPNG.fix('.circle, .read-more, .blue-bullets li, #sidebar .sidebar-button');</script>
+    <link rel="stylesheet" href="{% static 'homepage/bootstrap/style/ie6.css' %}">
+    <![endif]-->
+    <!--[if IE 7]><link type="text/css" rel="stylesheet" href="{% static 'homepage/bootstrap/styles/ie7.css' %}"><![endif]-->
 </head>
 <body class="page">
 <div id="wrap">
-  <div id="header">
-      <h1><a href="/">Joen Tree&nbsp&nbsp<i class="fa-solid fa-tree"></i></a></h1>
-    <div id="nav">
-      <ul class="menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-          <ul class="sub-menu">
-            <li><a href="project.html">회사 소개</a><br></li>
-            <li><a href="#">회사 연혁</a><br></li>
-            <li><a href="#">경영 철학 및 핵심 가치</a><br></li>
-            <li><a href="#">찾아오시는 길</a><br></li>
-          </ul>
-        <li><a href="/single_pages">Portfolio</a></li>
-        <li><a href="/recruit">Recruit</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
+    <div id="header">
+        <h1><a href="/">Joen Tree&nbsp&nbsp<i class="fa-solid fa-tree"></i></a></h1>
+        <div id="nav">
+            <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a>
+                    <ul class="sub-menu">
+                        <li><a href="/introduce">회사 소개</a><br></li>
+                        <li><a href="/history">회사 연혁</a><br></li>
+                        <li><a href="/business">경영 철학 및 핵심 가치</a><br></li>
+                        <li><a href="/map">찾아오시는 길</a><br></li>
+                        <li><a href="/notice">공지사항</a><br></li>
+
+                    </ul>
+                </li>
+                <li><a href="/single_pages">Portfolio</a></li>
+                <li><a href="/recruit">Recruit</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+        <!--end nav-->
     </div>
-    <!--end nav-->
-  </div>
-  <!--end header-->
-{% block main_area %}
-{% endblock %}
-  <!--end frontpage-main-->
-  <div id="footer">
-    <p class="copyright"><a target="_blank" href="http://www.chris-creed.com/">Chris Creed</a></p>
-  </div>
-  <!--end footer-->
+    <!--end header-->
+    {% block main_area %}
+    {% endblock %}
+    <!--end frontpage-main-->
+    <div id="footer">
+        <p class="copyright"><a target="_blank" href="http://www.chris-creed.com/">Chris Creed</a></p>
+    </div>
+    <!--end footer-->
 </div>
 <!--end wrap-->
-<div class="cache-images"> <img src="images/red-button-bg.png" width="0" height="0" alt="" /> </div>
+<div class="cache-images"><img src="images/red-button-bg.png" width="0" height="0" alt=""/></div>
 <!--end cache-images-->
 </body>
 </html>

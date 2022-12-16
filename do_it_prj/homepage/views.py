@@ -47,6 +47,31 @@ def notice_create(request):
         return redirect('notice')
 
     return render(request, 'homepage/notice_create.html', {'topics': topics})
+
+def introduce(request):
+    return render(
+        request,
+        'homepage/introduce.html'
+    )
+
+def history(request):
+    return render(
+        request,
+        'homepage/history.html'
+    )
+
+def business(request):
+    return render(
+        request,
+        'homepage/business.html'
+    )
+
+def map(request):
+    return render(
+        request,
+        'homepage/map.html'
+    )
+
 def recruit(request):
     return render(
         request,
