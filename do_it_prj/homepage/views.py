@@ -15,10 +15,20 @@ def about(request):
         'homepage/services.html'
     )
 def notice(request):
-    topics = Topic.objects.all()
+    topics = Topic.objects.all().order_by('-pk')
     return render(
         request,
         'homepage/notice.html',
+        {
+            'topics': topics,
+        }
+    )
+
+def single_page(request, pk):
+    topics = Topic.objects.get(pk=pk)
+    return render(
+        request,
+        'homepage/notice_detail.html',
         {
             'topics': topics,
         }

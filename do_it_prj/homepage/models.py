@@ -11,6 +11,7 @@ class Topic(models.Model):
     writter = models.ForeignKey(User, related_name='topics',on_delete=models.CASCADE, null=True)
     def __str__(self):
         return f'[{self.pk}] {self.subject}'
+
 class Reply(models.Model):
     message = models.TextField(max_length=5000)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -19,5 +20,6 @@ class Reply(models.Model):
     updated_by=  models.ForeignKey(User,null=True,related_name='+',on_delete=models.CASCADE)
     def __str__(self):
         return f'[{self.pk}] {self.subject}'
+
 
 # Create your models here.

@@ -6,6 +6,7 @@ urlpatterns = [
     path('',views.landing),
     path('about/',views.about),
     path('notice/',views.notice,name='notice'),
+    path('notice/<int:pk>', views.single_page, name='single_page'),
     path('notice_create/',views.notice_create,name='notice_create'),
     path('introduce/',views.introduce,name='introduce'),
     path('history/',views.history,name='history'),

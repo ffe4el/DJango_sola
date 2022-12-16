@@ -1,0 +1,22 @@
+{% extends 'homepage/basetem.html' %}
+{% load static %}
+
+{% block main_area %}
+    <div id="main">
+        <div id="content">
+            {% for t in topics %}
+                <div class="article">
+                    <h3 class="article-title"><a href="#">{{ t.subject }}</a></h3>
+                    <h3 class="article-meta">{{ t.writter.username }} / {{ t.last_updated }}</h3>
+                    <p>{{ t.message }}</p>
+                    <p><a href="{% url 'single_page' pk=p.pk %}" class="more-link">Read Full Notice &raquo;</a></p></div>
+                <div class="article-line">
+                    <hr>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="mb-4">
+            <a href="{% url 'notice_create' %}" class="btn btn-info"><b>글 작성</b></a>
+        </div>
+    </div>
+{% endblock %}

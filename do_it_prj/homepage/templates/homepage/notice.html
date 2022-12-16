@@ -8,7 +8,7 @@
                 <div class="article">
                     <h3 class="article-title"><a href="#">{{ t.subject }}</a></h3>
                     <h3 class="article-meta">{{ t.writter.username }} / {{ t.last_updated }}</h3>
-                    <p><a href="#" class="more-link">Read Full Notice &raquo;</a></p></div>
+                    <p><a href="{% url 'single_page' pk=t.pk %}" class="more-link">Read Full Notice &raquo;</a></p></div>
                 <div class="article-line">
                     <hr>
                 </div>
