@@ -1,17 +1,9 @@
 {% extends 'homepage/basetem.html' %}
 {% load static %}
 
-{#{% block check1 %}{% endblock %}#}
-{#{% block check2 %}{% endblock %}#}
-{#{% block check3 %}{% endblock %}#}
-{#{% block check4 %}class="current_page_item"{% endblock %}#}
-{#{% block check5 %}{% endblock %}#}
-
 {% block main_area %}
     <form method="post">
         {% csrf_token %}
-
-        <!-- writting title -->
         <div class="form-group">
             <label for="id_subject"> 제목 </label>
             <input type="text" class="form-control" id="id_subject" name="subject">
@@ -19,9 +11,9 @@
 
         <div class="form-group">
             <lable for="id_message">내용</lable>
-            <textarea class="form-control" id="id_message" name="message" rows="100"></textarea>
+            <textarea class="form-control" id="id_message" name="message" rows=20></textarea>
         </div>
-        <button type="submit" class="btn btn-success">게시</button>
+        <button type="submit" class="btn btn-success">글 등록</button>
 
 
     </form>

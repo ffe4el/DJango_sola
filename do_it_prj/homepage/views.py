@@ -46,7 +46,7 @@ def notice_create(request):
 
         return redirect('notice')
 
-    return render(request, 'notice_create.html', {'topics': topics})
+    return render(request, 'homepage/notice_create.html', {'topics': topics})
 def recruit(request):
     return render(
         request,
