@@ -2,21 +2,28 @@
 {% load static %}
 
 {% block main_area %}
+<form action="">
     <div id="main">
         <div id="content">
-            {% for t in topics %}
-                <div class="article">
-                    <h3 class="article-title"><a href="#">{{ t.subject }}</a></h3>
-                    <h3 class="article-meta">{{ t.writter.username }} / {{ t.last_updated }}</h3>
-                    <p>{{ t.message }}</p>
-                    <p><a href="{% url 'single_page' pk=p.pk %}" class="more-link">Read Full Notice &raquo;</a></p></div>
-                <div class="article-line">
-                    <hr>
-                </div>
-            {% endfor %}
-        </div>
-        <div class="mb-4">
-            <a href="{% url 'notice_create' %}" class="btn btn-info"><b>글 작성</b></a>
+            <div class="article">
+                <h3 class="article-title"><a href="#">{{ topic.subject }}</a></h3>
+                <h3 class="article-meta">{{ topic.writter.username }} / {{ topic.last_updated }}</h3>
+                <p>{{ topic.message }}</p>
+            </div>
+            <div class="mb-6">
+                <a href="{% url 'notice' %}" class="btn btn-info"><b>이전으로 돌아가기</b></a>
+            </div>
+            <input type="button" class="btnUpdate" value="수정">
         </div>
     </div>
+</form>
+<script>
+    document.querySelector('.btnUpdate').addEventListener('click', e => {
+    });
+    let subject = document.querySelector('.subject');
+    let message = document.querySelector('.message');
+
+    subject.readOnly = false;
+    message.readOnly = false;
+</script>
 {% endblock %}

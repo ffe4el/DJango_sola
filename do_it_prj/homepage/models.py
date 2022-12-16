@@ -5,8 +5,8 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Topic(models.Model):
-    message = models.TextField(max_length=5000,null=True)
-    subject = models.CharField(max_length=255)
+    message = models.TextField(max_length=5000,blank=False,default='')
+    subject = models.CharField(max_length=255, blank=False,default='')
     last_updated =  models.DateField(auto_now_add=True, null=True)
     writter = models.ForeignKey(User, related_name='topics',on_delete=models.CASCADE, null=True)
     def __str__(self):

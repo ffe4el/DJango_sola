@@ -3,26 +3,25 @@
 
 {% block main_area %}
     <div id="main">
+{#        <a class="btn btn-success btn-lg" href="{% url 'notice_create' %}" role="button">글작성</a>#}
+        <button type="button" class="btn btn-success btn-lg">
+        <a  href="{% url 'notice_create' %}">글 작성</a></button>
         <div id="content">
             {% for t in topics %}
                 <div class="article">
                     <h3 class="article-title"><a href="#">{{ t.subject }}</a></h3>
                     <h3 class="article-meta">{{ t.writter.username }} / {{ t.last_updated }}</h3>
                     <p><a href="{% url 'single_page' pk=t.pk %}" class="more-link">Read Full Notice &raquo;</a></p></div>
-                <div class="article-line">
-                    <hr>
-                </div>
+                <div class="article-line"></div>
             {% endfor %}
         </div>
-        <div class="mb-4">
-            <a href="{% url 'notice_create' %}" class="btn btn-info"><b>글 작성</b></a>
-        </div>
+
         <!--end content-->
         <div id="sidebar">
             <div id="hire">
                 <h3 class="sidebar-title">Want To Hire Joen Tree?</h3>
                 <p>Joen Tree에서 함께할 가족을 찾습니다.</p>
-                <a class="sidebar-button" href="contact">Contact Us &raquo;</a></div>
+                <a class="sidebar-button" href="{% url 'contact' %}">Contact Us &raquo;</a></div>
             <!--end hire-->
             <div id="featured-project">
                 <h3>Featured Project</h3>

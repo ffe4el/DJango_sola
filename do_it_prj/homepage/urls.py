@@ -13,7 +13,7 @@ urlpatterns = [
     path('map/',views.map,name='map'),
     path('business/',views.business,name='business'),
     path('recruit/',views.recruit),
-    path('contact/',views.contact),
+    path('contact/',views.contact, name='contact'),
 
     # path('single_pages/',include('single_pages.urls')),
 

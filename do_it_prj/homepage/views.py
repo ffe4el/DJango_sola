@@ -25,12 +25,12 @@ def notice(request):
     )
 
 def single_page(request, pk):
-    topics = Topic.objects.get(pk=pk)
+    topic = Topic.objects.get(pk=pk)
     return render(
         request,
         'homepage/notice_detail.html',
         {
-            'topics': topics,
+            'topic': topic,
         }
     )
 
