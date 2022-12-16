@@ -5,9 +5,13 @@ from .models import Topic, Reply
 from django.http import HttpResponse
 
 def landing(request):
+    topics = Topic.objects.all().order_by('-pk')
     return render(
         request,
-        'homepage/landing.html'
+        'homepage/landing.html',
+        {
+            'topics': topics,
+        }
     )
 def about(request):
     return render(
