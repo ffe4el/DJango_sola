@@ -33,14 +33,17 @@
 {% block port_area %}
     <!-- Portfolio Item 1-->
     {% if post.port1 %}
-        <div class="col-md-6 col-lg-4 mb-5">
+        <div class="col-md-6 col-lg-4 mb-5 rectangle">
             <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                     <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i>
                     </div>
                 </div>
                 {% if post.port1_img %}
-                    <img class="img-fluid" src="{{ post.port1_img.url }}" alt="..."/>
+                    <div class="port-user-img align-middle">
+                        <img class="profile-user-img-img" src="{{ post.port1_img.url }}" alt="profile-user-img">
+                    </div>
+{#                    <img class="img-fluid" src="{{ post.port1_img.url }}" alt="..."/>#}
                 {% else %}
                     <img class="img-fluid" src="https://picsum.photos/seed/{{ post.id }}/800/200" alt="random_image"/>
                 {% endif %}
@@ -49,14 +52,16 @@
     {% endif %}
     <!-- Portfolio Item 2-->
     {% if post.port2 %}
-        <div class="col-md-6 col-lg-4 mb-5">
+        <div class="col-md-6 col-lg-4 mb-5 rectangle">
             <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                     <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i>
                     </div>
                 </div>
                 {% if post.port2_img %}
-                    <img class="img-fluid" src="{{ post.port2_img.url }}" alt="..."/>
+                    <div class="port-user-img align-middle">
+                        <img class="profile-user-img-img" src="{{ post.port2_img.url }}" alt="profile-user-img">
+                    </div>
                 {% else %}
                     <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
                 {% endif %}
@@ -65,14 +70,16 @@
     {% endif %}
     <!-- Portfolio Item 3-->
     {% if post.port3 %}
-        <div class="col-md-6 col-lg-4 mb-5">
+        <div class="col-md-6 col-lg-4 mb-5 rectangle">
             <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                     <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i>
                     </div>
                 </div>
                 {% if post.port3_img %}
-                    <img class="img-fluid" src="{{ post.port3_img.url }}" alt="..."/>
+                    <div class="port-user-img align-middle">
+                        <img class="profile-user-img-img" src="{{ post.port3_img.url }}" alt="profile-user-img">
+                    </div>
                 {% else %}
                     <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
                 {% endif %}
@@ -81,14 +88,16 @@
     {% endif %}
     <!-- Portfolio Item 4-->
     {% if post.port4 %}
-        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 rectangle">
             <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                     <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i>
                     </div>
                 </div>
                 {% if post.port4_img %}
-                    <img class="img-fluid" src="{{ post.port4_img.url }}" alt="..."/>
+                    <div class="port-user-img align-middle">
+                        <img class="profile-user-img-img" src="{{ post.port4_img.url }}" alt="profile-user-img">
+                    </div>
                 {% else %}
                     <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
                 {% endif %}
@@ -97,14 +106,16 @@
     {% endif %}
     <!-- Portfolio Item 5-->
     {% if post.port5 %}
-        <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+        <div class="col-md-6 col-lg-4 mb-5 mb-md-0 rectangle">
             <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                     <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i>
                     </div>
                 </div>
                 {% if post.port5_img %}
-                    <img class="img-fluid" src="{{ post.port5_img.url }}" alt="..."/>
+                    <div class="port-user-img align-middle">
+                        <img class="profile-user-img-img" src="{{ post.port5_img.url }}" alt="profile-user-img">
+                    </div>
                 {% else %}
                     <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
                 {% endif %}
@@ -113,14 +124,16 @@
     {% endif %}
     <!-- Portfolio Item 6-->
     {% if post.port6 %}
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4 rectangle">
             <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                     <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i>
                     </div>
                 </div>
                 {% if post.port6_img %}
-                    <img class="img-fluid" src="{{ post.port6_img.url }}" alt="..."/>
+                   <div class="port-user-img middle">
+                        <img class="profile-user-img-img" src="{{ post.port6_img.url }}" alt="profile-user-img">
+                    </div>
                 {% else %}
                     <img class="img-fluid" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image"/>
                 {% endif %}
@@ -285,15 +298,17 @@
     {% endif %}
 {% endblock %}
 
+
 {% block mypic_area %}
     <div class="row">
         <div align="center">
             <p class="lead"><br>
-            {% if post.profile_image %}
-                <div class="profile-user-img">
-                    <img class='profile-user-img-img' src='{{ post.profile_image.url }}' alt="profile-user-img"/><br><br>
-                </div>
-            {% endif %}
+                {% if post.profile_image %}
+                    <div class="profile-user-img">
+                        <img class='profile-user-img-img' src='{{ post.profile_image.url }}'
+                             alt="profile-user-img"/><br><br>
+                    </div>
+                {% endif %}
             <br><br>{{ post.get_about_me_markdown | safe }}
             </p>
         </div>
