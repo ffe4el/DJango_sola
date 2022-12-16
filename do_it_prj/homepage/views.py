@@ -16,6 +16,11 @@ def notice(request):
         request,
         'homepage/notice.html'
     )
+def notice_create(request):
+    return render(
+        request,
+        'homepage/notice_create.html'
+    )
 def recruit(request):
     return render(
         request,
