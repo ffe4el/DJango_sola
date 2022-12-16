@@ -11,14 +11,20 @@ def about(request):
         request,
         'homepage/services.html'
     )
+def notice(request):
+    return render(
+        request,
+        'homepage/notice.html'
+    )
 def recruit(request):
     return render(
         request,
-        'homepage/articles.html'
+        'homepage/recruit.html'
     )
 def contact(request):
     return render(
         request,
         'homepage/contact.html'
     )
+
 # Create your views here.
