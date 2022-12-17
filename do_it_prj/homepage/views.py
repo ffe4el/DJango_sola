@@ -86,6 +86,12 @@ def map(request):
         'homepage/map.html'
     )
 
+def portfolio(request):
+    return render(
+        request,
+        'homepage/portfolio.html'
+    )
+
 def recruit(request):
     return render(
         request,
