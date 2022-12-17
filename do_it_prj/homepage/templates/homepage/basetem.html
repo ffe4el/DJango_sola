@@ -8,9 +8,14 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <!--[if IE 6]>-->
     <style>
-    body {
-        behavior: url("style/ie6-hover-fix.htc");
-    }
+        body {
+            behavior: url("style/ie6-hover-fix.htc");
+        }
+
+        .aside {
+            position: sticky;
+            top: 0;
+        }
 
     </style>
 
@@ -41,12 +46,17 @@
                         <li><a href="/business">경영 철학 및 핵심 가치</a><br></li>
                         <li><a href="/map">찾아오시는 길</a><br></li>
                         <li><a href="/notice">공지사항</a><br></li>
-
                     </ul>
                 </li>
                 <li><a href="/single_pages">Portfolio</a></li>
                 <li><a href="/recruit">Recruit</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><a href="/contact">Contact</a>
+                    <ul class="sub-menu">
+                        <li><a href="/contact">이메일 컨택트</a><br></li>
+                        <li><a href="/#">일정 예약</a><br></li>
+                    </ul>
+                </li>
+                <li><a href="#">Chat</a></li>
             </ul>
         </div>
         <!--end nav-->

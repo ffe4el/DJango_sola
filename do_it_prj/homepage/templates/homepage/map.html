@@ -3,6 +3,7 @@
 
 {% block main_area %}
     <div id="main">
+    <h3>찾아오시는 길</h3><hr>
         <div id="content">
             <div id="map" style="width:100%;height:350px;"></div>
 
@@ -11,7 +12,7 @@
             <script>
                 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
                     mapOption = {
-                        center: new kakao.maps.LatLng(35.8468, 127.1306), // 지도의 중심좌표
+                        center: new kakao.maps.LatLng(35.8492, 127.1308), // 지도의 중심좌표(농생대1호관)
                         level: 3 // 지도의 확대 레벨
                     };
 
@@ -57,6 +58,7 @@
 
         </div>
         <!--end content-->
+        <div class="aside">
         <div id="sidebar">
             <h3 class="sidebar-title">Want To Hire Joen Tree?</h3>
             <p>Our company is always recruiting Highflier.</p>
@@ -71,7 +73,7 @@
                 <li><a href="/map">찾아오시는 길</a><br></li>
                 <li><a href="/notice">공지사항</a><br></li>
             </ul>
-        </div>
+        </div></div>
         <!--end sidebar-->
     </div>
     <!--end main-->

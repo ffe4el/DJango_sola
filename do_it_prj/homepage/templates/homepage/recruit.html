@@ -1,66 +1,78 @@
 {% extends 'homepage/basetem.html' %}
 {% load static %}
 
-{#{% block check1 %}{% endblock %}#}
-{#{% block check2 %}{% endblock %}#}
-{#{% block check3 %}{% endblock %}#}
-{#{% block check4 %}class="current_page_item"{% endblock %}#}
-{#{% block check5 %}{% endblock %}#}
-
-
 {% block main_area %}
-  <div id="main">
-    <div id="content">
-      <div class="article" >
-        <h3 class="article-title"><a href="#">[ADD ARTICLE TITLE]</a></h3>
-        <h3 class="article-meta">[ADD AUTHOR NAME] / [ADD PUBLICATION DATE]</h3>
-        <p>[ADD ARTICLE OVERVIEW] <a href="#" class="more-link">Read Full Article &raquo;</a></p>
-      </div>
-      <!--end article-->
-      <div class="article-line"></div>
-      <div class="article">
-        <h3 class="article-title"><a href="#">[ADD ARTICLE TITLE]</a></h3>
-        <h3 class="article-meta">[ADD AUTHOR NAME] / [ADD PUBLICATION DATE]</h3>
-        <p>[ADD ARTICLE OVERVIEW] <a href="#" class="more-link">Read Full Article &raquo;</a></p>
-      </div>
-      <!--end article-->
-      <div class="article-line"></div>
-      <div class="article">
-        <h3 class="article-title"><a href="#">[ADD ARTICLE TITLE]</a></h3>
-        <h3 class="article-meta">[ADD AUTHOR NAME] / [ADD PUBLICATION DATE]</h3>
-        <p>[ADD ARTICLE OVERVIEW] <a href="#" class="more-link">Read Full Article &raquo;</a></p>
-      </div>
-      <!--end article-->
-      <div class="article-line"></div>
-      <div class="article">
-        <h3 class="article-title"><a href="#">[ADD ARTICLE TITLE]</a></h3>
-        <h3 class="article-meta">[ADD AUTHOR NAME] / [ADD PUBLICATION DATE]</h3>
-        <p>[ADD ARTICLE OVERVIEW] <a href="#" class="more-link">Read Full Article &raquo;</a></p>
-      </div>
-      <!--end article-->
-      <div class="article-line"></div>
-      <div class="article">
-        <h3 class="article-title"><a href="#">[ADD ARTICLE TITLE]</a></h3>
-        <h3 class="article-meta">[ADD AUTHOR NAME] / [ADD PUBLICATION DATE]</h3>
-        <p>[ADD ARTICLE OVERVIEW] <a href="#" class="more-link">Read Full Article &raquo;</a></p>
-      </div>
-      <!--end article-->
+    <div id="main">
+        <div id="content">
+            <div id='sin-ip'>
+                <h3>채용 정보</h3>
+                <hr>
+                <h2>💁🏼‍♂️
+                    <mark style="background-color:#ffcdc9;">신입공채</mark>
+                    💁🏻‍♀️
+                </h2>
+                <p><b>Joen Tree</b>는 '함께 가는 열린 채용'을 통해 학력, 연령, 성별 구분 없이 우수한 인재를 선발하고 있습니다.⭐️ </p>
+                <br>
+                <h4><b>채용안내</b></h4>
+                <p>
+                    - 모집시기 : 상반기(3월), 하반기(9월)<br>
+                    - 지원자격 : 졸업예정자 또는 기졸업자<br>
+                    - 병역필 또는 면제자로 해외여행에 결격사유가 없는 분<br>
+                    - 어학자격을 보유하신 분(OPIc 또는 TOEIC)
+                </p>
+                <h4><b>전형 프로세스</b></h4>
+                <p>
+                    지원서 접수 > 직무접합성 평가 > 직무적성검사 > 종합면접 > 채용 건강검진
+                </p>
+                <br>
+                <p><img src="{% static 'homepage/bootstrap/images/recruit.png' %}" width="450px" height="270px"><br></p>
+            </div>
+            <br><br><br>
+            <div id='univ'>
+                <h2>
+                    <mark style="background-color:#ffcdc9;">👩🏻‍🎓대학생 인턴십👨🏻‍🎓</mark>
+                </h2>
+                <hr>
+                <p>
+                    취업 전 Joen Tree에서의 <b>인턴 실습 기회</b>!
+                    <br>인턴십을 통해 Joen Tree에 대한 이해도를 높이고 직무역량도 쌓으시길 바랍니다.
+                </p>
+                <h4><b>채용안내</b></h4>
+                <p>- 모집시기 : 3-4월 (실습 : 7-8월)<br>
+                    - 지원자격 : 인턴십 수료 후 1년 이내에 졸업 가능한 분(석사 제외)<br>
+                    병역필 또는 면제자로 해외여행에 결격사유가 없는 분<br>
+                    어학자격을 보유하신 분(OPIc 및 토익 스피킹)
+                </p>
+                <h4><b>전형 프로세스</b></h4>
+                <p>지원서 접수 > 직무접합성 평가 > 직무적성검사 > 종합면접 </p>
+            </div>
+            <br><br><br>
+            <div id='career'>
+                <h2>
+                    <mark style="background-color:#ffcdc9;">🧟‍♀️경력채용🧟‍♂️</mark>
+                </h2>
+                <hr>
+                <p>
+                    기업의 근간은 사람이라는 믿음, Joen Tree의 핵심 경영철학입니다.<br>
+                    자신의 분야에서 열정과 능력으로 쌓아 온 푸른 꿈을 Joen Tree에서 펼치시기 바랍니다.
+                </p>
+                <h4><b>채용안내</b></h4>
+                <p>- 모집시기 : 수시<br>
+                    - 지원자격 : 지원분야 실무경력 4년 이상인 분 (석사의 경우 2년 이상)<br>
+                </p>
+                <h4><b>전형 프로세스</b></h4>
+                <p>지원서 접수 > 서류전형 > 면접진형 > 채용 건강검진 </p>
+            </div>
+        </div>
+
+    <div id="sidebar" class="aside">
+        <br>
+        <h3 class="sidebar-title">About Joen Tree</h3>
+        <ul class="sidebar-menu">
+            <li><a href="#sin-ip">신입공채</a><br></li>
+            <li><a href="#univ">대학생 인턴십</a><br></li>
+            <li><a href="#career">경력 채용</a><br></li>
+        </ul>
     </div>
-    <!--end content-->
-    <div id="sidebar">
-      <div id="hire">
-        <h3 class="sidebar-title">Want To Hire [ADD COMPANY NAME]?</h3>
-        <p>[ADD OVERVIEW]</p>
-        <a class="sidebar-button" href="#">Contact Us &raquo;</a> </div>
-      <!--end hire-->
-      <div id="featured-project">
-        <h3>Featured Project</h3>
-        <p>[ADD OVERVIEW]</p>
-        <div class="portfolio-item"> <a href="#"><img src="images/280x200.gif" alt="" /></a> </div>
-        <!--end portfolio-item-->
-        <a class="sidebar-button" href="#">All Projects &raquo;</a> </div>
-      <!--end recent-projects-->
-    </div>
-    <!--end sidebar-->
-  </div>
+</div>
 {% endblock %}
