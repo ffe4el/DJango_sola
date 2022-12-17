@@ -3,27 +3,27 @@
 
 {% block main_area %}
     <div id="featured-section">
-        <h2><img src="{% static 'homepage/bootstrap/images/flag.png' %}" . width="30" , height="30">&nbsp&nbspflagship
+        <h2><img src="{% static 'homepage/bootstrap/images/flag.png' %}" width="30" height="30">&nbsp&nbspflagship
             product</h2>
         <div id="circles">
             <div class="red-circle circle first">
                 <h3><em>[Agriculture]</em><br></h3>
-                <p><img src="{% static 'homepage/bootstrap/images/sprout.png' %}" . width="100" , height="100"></p>
+                <p><img src="{% static 'homepage/bootstrap/images/sprout.png' %}" width="100" height="100"></p>
             </div>
             <!--end red-circle-->
             <div class="pink-circle circle">
                 <h3><em>[Soft-Engineering]</em><br></h3>
-                <p><img src="{% static 'homepage/bootstrap/images/soft.png' %}" . width="100" , height="100"></p>
+                <p><img src="{% static 'homepage/bootstrap/images/soft.png' %}" width="100" height="100"></p>
             </div>
             <!--end red-circle-->
             <div class="orange-circle circle">
                 <h3><em>[AI/Argorithm]</em><br></h3>
-                <p><img src="{% static 'homepage/bootstrap/images/AI.png' %}" . width="100" , height="100"></p>
+                <p><img src="{% static 'homepage/bootstrap/images/AI.png' %}" width="100" height="100"></p>
             </div>
             <!--end red-circle-->
             <div class="yellow-circle circle">
                 <h3><em>[DataScience]</em><br></h3>
-                <p><img src="{% static 'homepage/bootstrap/images/data.png' %}" . width="100" , height="100"></p>
+                <p><img src="{% static 'homepage/bootstrap/images/data.png' %}" width="100" height="100"></p>
             </div>
             <!--end red-circle-->
         </div>
@@ -35,8 +35,8 @@
             <h3>공지사항</h3>
             <ul class="blue-bullets">
                 {% for t in topics %}
-                    <li background="k">
-                    <span href="{% url 'single_page' pk=t.pk %}" class="more-link">{{ t.subject }}--{{ t.last_updated }}</span>
+                    <li>
+                    <a href="{% url 'single_page' pk=t.pk %}" class="">{{ t.subject }} -- {{ t.last_updated }}</span>
                     </li>
                 {% endfor %}
             </ul>

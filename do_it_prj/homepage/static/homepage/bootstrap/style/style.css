@@ -266,7 +266,8 @@ em{
 	margin:10px 0 0 0;
 }
 .blue-bullets li{
-	background:url(../images/blue-bullet.png) no-repeat;
+	background: white;
+	width:50px;
 	height:21px;
 	position:relative;
 	padding:0 0 18px 35px;

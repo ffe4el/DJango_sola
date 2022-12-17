@@ -4,9 +4,10 @@
 {% block main_area %}
 <form action="">
     <div id="main">
+        <p><i>공지사항</i></p><hr><br>
         <div id="content">
             <div class="article">
-                <h3 class="article-title"><a href="#">{{ topic.subject }}</a></h3>
+                <h3 class="article-title">{{ topic.subject }}</h3>
                 <h3 class="article-meta">{{ topic.writter.username }} / {{ topic.last_updated }}</h3>
                 <p>{{ topic.message }}</p>
             </div>
