@@ -2,34 +2,41 @@
 {% load static %}
 
 {% block main_area %}
-  <div id="main">
-    <div id="content">
-      <p>[ADD OVERVIEW]</p>
-      <h3>[ADD SERVICE NAME]</h3>
-      <p>[ADD SERVICE OVERVIEW]</p>
-      <h3>[ADD SERVICE NAME]</h3>
-      <p>[ADD SERVICE OVERVIEW]</p>
-      <h3>[ADD SERVICE NAME]</h3>
-      <p>[ADD SERVICE OVERVIEW]</p>
-      <h3>[ADD SERVICE NAME]</h3>
-      <p>[ADD SERVICE OVERVIEW]</p>
+    <div id="main">
+        <div id="content">
+            <h3>경영철학과 목표</h3><hr>
+            <h3>1) 인재와 기술을 바탕으로</h3>
+            <p>
+                · 인재육성과 기술우위 확보를 경영의 원칙으로 삼는다.
+                · 인재와 기술의 조화를 통하여 경영전반의 시너지 효과를 증대한다.</p>
+            <h3>2) 최고의 제품과 서비스를 창출하여</h3>
+            <p>
+                · 고객에게 최고의 만족을 줄 수 있는 제품과 서비스를 창출한다.
+                · 동종업계에서 세계 1군의 위치를 확보한다.
+            </p>
+            <h3>3) 인류사회에 공헌한다</h3>
+            <p>
+                · 인류의 공동이익과 풍요로운 삶을 위해 기여한다.
+                · 인류공동체 일원으로서의 사명을 다한다.
+            </p>
+        </div>
+        <!--end content-->
+        <div id="sidebar">
+            <h3 class="sidebar-title">Want To Hire Joen Tree?</h3>
+            <p>Our company is always recruiting Highflier.</p>
+            <a class="sidebar-button" href="{% url 'contact' %}">Contact Us &raquo;</a></div>
+        <div id="sidebar">
+            <br>
+            <h3 class="sidebar-title">About Joen Tree</h3>
+            <ul class="sidebar-menu">
+                <li><a href="/introduce">회사 소개</a><br></li>
+                <li><a href="/history">회사 연혁</a><br></li>
+                <li><a href="/business">경영 철학 및 핵심 가치</a><br></li>
+                <li><a href="/map">찾아오시는 길</a><br></li>
+                <li><a href="/notice">공지사항</a><br></li>
+            </ul>
+        </div>
+        <!--end sidebar-->
     </div>
-    <!--end content-->
-    <div id="sidebar">
-      <div id="hire">
-        <h3 class="sidebar-title">Want To Hire [ADD COMPANY NAME]?</h3>
-        <p>[ADD OVERVIEW]</p>
-        <a class="sidebar-button" href="#">Contact Us &raquo;</a> </div>
-      <!--end hire-->
-      <div id="featured-project">
-        <h3>Featured Project</h3>
-        <p>[ADD OVERVIEW]</p>
-        <div class="portfolio-item"> <a href="#"><img src="images/280x200.gif" alt="" /></a> </div>
-        <!--end portfolio-item-->
-        <a class="sidebar-button" href="#">All Projects &raquo;</a> </div>
-      <!--end recent-projects-->
-    </div>
-    <!--end sidebar-->
-  </div>
-  <!--end main-->
+    <!--end main-->
 {% endblock %}
