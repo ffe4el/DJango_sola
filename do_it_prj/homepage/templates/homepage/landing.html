@@ -33,10 +33,10 @@
     <div id="frontpage-main">
         <div id="overview" class="frontpage-section">
             <h3>공지사항</h3>
-            <ul class="blue-bullets">
+            <ul >
                 {% for t in topics %}
                     <li>
-                    <a href="{% url 'single_page' pk=t.pk %}" class="">{{ t.subject }} -- {{ t.last_updated }}</a>
+                    <a href="{% url 'single_page' pk=t.pk %}" class="">✅&nbsp;&nbsp;&nbsp;{{ t.subject }} -- {{ t.last_updated }}</a>
                     </li>
                 {% endfor %}
             </ul>
