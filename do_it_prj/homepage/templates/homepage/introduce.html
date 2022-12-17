@@ -3,6 +3,7 @@
 
 {% block main_area %}
   <div id="main">
+  <h3>회사 소개</h3><hr>
     <div id="content">
         <h2>Green 경영으로 인류의 지속가능한 미래를<br><br> 만들어 가는 <b><mark>Joen Tree</mark></b>입니다.</h2><hr><br>
         <p>대한민국 농산업을 최선두에서 이끌며 농업발전의 견인차 역할을 해 온 Joen Tree는 Green 경영을 기반으로
@@ -13,10 +14,20 @@
     </div>
     <!--end content-->
     <div id="sidebar">
-      <div id="hire">
-        <h3 class="sidebar-title">Want To Hire Joen Tree?</h3>
-        <p>Our company is always recruiting Highflier.</p>
-        <a class="sidebar-button" href="{% url 'contact' %}">Contact Us &raquo;</a> </div>
+      <h3 class="sidebar-title">Want To Hire Joen Tree?</h3>
+            <p>Our company is always recruiting Highflier.</p>
+            <a class="sidebar-button" href="{% url 'contact' %}">Contact Us &raquo;</a></div>
+        <div id="sidebar">
+            <br>
+            <h3 class="sidebar-title">About Joen Tree</h3>
+            <ul class="sidebar-menu">
+                <li><a href="/introduce">회사 소개</a><br></li>
+                <li><a href="/history">회사 연혁</a><br></li>
+                <li><a href="/business">경영 철학 및 핵심 가치</a><br></li>
+                <li><a href="/map">찾아오시는 길</a><br></li>
+                <li><a href="/notice">공지사항</a><br></li>
+            </ul>
+            </div>
       <!--end hire-->
   </div>
   <!--end main-->
