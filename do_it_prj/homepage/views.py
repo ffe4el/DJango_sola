@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from .models import Topic, Reply, Account
 from django.http import HttpResponse
 
+
 def landing(request):
     topics = Topic.objects.all().order_by('-pk')
     return render(
@@ -13,11 +14,15 @@ def landing(request):
             'topics': topics,
         }
     )
+
+
 def about(request):
     return render(
         request,
         'homepage/services.html'
     )
+
+
 def notice(request):
     topics = Topic.objects.all().order_by('-pk')
     return render(
@@ -28,6 +33,7 @@ def notice(request):
         }
     )
 
+
 def single_page(request, pk):
     topic = Topic.objects.get(pk=pk)
     return render(
@@ -37,6 +43,7 @@ def single_page(request, pk):
             'topic': topic,
         }
     )
+
 
 def notice_create(request):
     topics = Topic.objects.all()
@@ -62,11 +69,13 @@ def notice_create(request):
 
     return render(request, 'homepage/notice_create.html', {'topics': topics})
 
+
 def introduce(request):
     return render(
         request,
         'homepage/introduce.html'
     )
+
 
 def history(request):
     return render(
@@ -74,11 +83,13 @@ def history(request):
         'homepage/history.html'
     )
 
+
 def business(request):
     return render(
         request,
         'homepage/business.html'
     )
+
 
 def map(request):
     return render(
@@ -86,17 +97,21 @@ def map(request):
         'homepage/map.html'
     )
 
+
 def portfolio(request):
     return render(
         request,
         'homepage/portfolio.html'
     )
 
+
 def recruit(request):
     return render(
         request,
         'homepage/recruit.html'
     )
+
+
 # def contact(request):
 #     return render(
 #         request,
@@ -112,6 +127,7 @@ def account(request):
             'accounts': accounts,
         }
     )
+
 
 def contact(request):
     accounts = Account.objects.all()
