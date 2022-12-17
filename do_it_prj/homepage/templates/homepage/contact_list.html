@@ -1,0 +1,29 @@
+{% extends 'homepage/basetem.html' %}
+{% load static %}
+
+{% block main_area %}
+    <div id="main">
+        <div id="content">
+            <h3>콘택트 요청 리스트</h3>
+            <hr><br>
+            {% for a in accounts %}
+                <div class="article">
+                    <h3 class="article-title"><a href="#">name : {{ a.name }}</a></h3>
+                    <h2 class="article-meta">email : {{ a.email }}<br>{{ a.subject }}</h2>
+                    <h6>{{ a.message }}</h6><br>
+                    <p>{{ a.last_updated }}</p>
+                </div>
+                <div class="article-line"></div>
+            {% endfor %}
+        </div>
+
+        <!--end content-->
+        <div class="aside">
+            <div id="sidebar">
+                <h3 class="sidebar-title">컨택트 거래처 리스트</h3>
+                <p>컨택트 요청을 보낸 거래처의 목록입니다.</p>
+                <a class="sidebar-button" href="#">일정표로 가기 &raquo;</a></div>
+        </div>
+        <!--end sidebar-->
+    </div>
+{% endblock %}

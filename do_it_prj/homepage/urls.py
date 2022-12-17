@@ -14,8 +14,8 @@ urlpatterns = [
     path('business/',views.business,name='business'),
     path('recruit/',views.recruit),
     path('contact/',views.contact, name='contact'),
+    path('contact_list/',views.account, name='account'),
 
     # path('single_pages/',include('single_pages.urls')),
-
 
 ]

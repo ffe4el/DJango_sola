@@ -22,4 +22,11 @@ class Reply(models.Model):
         return f'[{self.pk}] {self.subject}'
 
 
+class Account(models.Model):
+    name = models.TextField(max_length=20,blank=False,default='')
+    email = models.TextField(max_length=20,blank=False,default='')
+    last_updated = models.DateField(auto_now_add=True, null=True)
+    subject = models.CharField(max_length=255, blank=False,default='')
+    message = models.TextField(max_length=1000,blank=False,default='')
+
 # Create your models here.

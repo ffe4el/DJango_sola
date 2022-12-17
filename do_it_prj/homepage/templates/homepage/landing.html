@@ -36,7 +36,7 @@
             <ul class="blue-bullets">
                 {% for t in topics %}
                     <li>
-                    <a href="{% url 'single_page' pk=t.pk %}" class="">{{ t.subject }} -- {{ t.last_updated }}</span>
+                    <a href="{% url 'single_page' pk=t.pk %}" class="">{{ t.subject }} -- {{ t.last_updated }}</a>
                     </li>
                 {% endfor %}
             </ul>

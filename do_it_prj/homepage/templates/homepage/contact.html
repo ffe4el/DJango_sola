@@ -1,26 +1,20 @@
 {% extends 'homepage/basetem.html' %}
 {% load static %}
 
-{#{% block check1 %}{% endblock %}#}
-{#{% block check2 %}{% endblock %}#}
-{#{% block check3 %}{% endblock %}#}
-{#{% block check4 %}{% endblock %}#}
-{#{% block check5 %}class="current_page_item"{% endblock %}#}
-
 {% block main_area %}
   <div id="main">
-    <div id="contact-details">
-      <h3 class="title">Get In Touch</h3>
-      <p>Please use the form on this page to discuss the possibility of working with us or contact us directly via phone or email.</p>
+    <div id="contact-details"><br>
+      <h3 class="title">안녕하세요. <b>Joen Tree</b>입니다.</h3>
+      <p>이 페이지의 양식을 사용하여 당사와 협력 가능성에 대해 논의하거나 전화 또는 이메일을 통해 당사에 직접 문의하십시오.</p>
       <h3>Contact Details</h3>
-      <h4>Phone: <span>[ADD PHONE NUMBER]</span></h4>
-      <h4>Fax: <span>[ADD FAX NUMBER]</span></h4>
-      <h4>Email: <span>[ADD EMAIL]</span></h4>
+      <h4>Phone: <span>063-270-2555</span></h4>
+      <h4>Fax: <span>063-270-2556</span></h4>
+      <h4>Email: <span>joentree@jbnu.ac.kr</span></h4>
     </div>
     <!--end contact-details-->
     <div id="contact-form-container">
-      <form id="contact-form" method="post" action="#">
-        <fieldset>
+      <form id="contact-form" method="post" action="#">{% csrf_token %}
+          <fieldset>
           <input id="form_name" type="text" name="name" value="Name" onFocus="if(this.value=='Name'){this.value=''};" onBlur="if(this.value==''){this.value='Name'};" />
           <input id="form_email" type="text" name="email" value="Email" onFocus="if(this.value=='Email'){this.value=''};" onBlur="if(this.value==''){this.value='Email'};" />
           <input id="form_subject" type="text" name="subject" value="Subject" onFocus="if(this.value=='Subject'){this.value=''};" onBlur="if(this.value==''){this.value='Subject'};" />
@@ -31,6 +25,20 @@
             <input name="spam_check" type="text" value="" />
           </div>
         </fieldset>
+
+
+
+{#        <fieldset>#}
+{#          <input id="form_name" type="text" name="name" value="Name" onFocus="if(this.value=='Name'){this.value=''};" onBlur="if(this.value==''){this.value='Name'};" />#}
+{#          <input id="form_email" type="text" name="email" value="Email" onFocus="if(this.value=='Email'){this.value=''};" onBlur="if(this.value==''){this.value='Email'};" />#}
+{#          <input id="form_subject" type="text" name="subject" value="Subject" onFocus="if(this.value=='Subject'){this.value=''};" onBlur="if(this.value==''){this.value='Subject'};" />#}
+{#          <textarea id="form_message" rows="10" cols="40" name="message"></textarea>#}
+{#          <input id="form_submit" class="submit" type="submit" name="submit" value="Submit &raquo;" />#}
+{#          <div class="hide">#}
+{#            <label>Do not fill out this field</label>#}
+{#            <input name="spam_check" type="text" value="" />#}
+{#          </div>#}
+{#        </fieldset>#}
       </form>
     </div>
     <!--end contact-form-container-->

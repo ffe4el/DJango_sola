@@ -1,7 +1,7 @@
 # from django.contrib.gis.db.backends.postgis import models
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from .models import Topic, Reply
+from .models import Topic, Reply, Account
 from django.http import HttpResponse
 
 def landing(request):
@@ -91,10 +91,39 @@ def recruit(request):
         request,
         'homepage/recruit.html'
     )
-def contact(request):
+# def contact(request):
+#     return render(
+#         request,
+#         'homepage/contact.html'
+#     )
+
+def account(request):
+    accounts = Account.objects.all().order_by('-pk')
     return render(
         request,
-        'homepage/contact.html'
+        'homepage/contact_list.html',
+        {
+            'accounts': accounts,
+        }
     )
+
+def contact(request):
+    accounts = Account.objects.all()
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        message = request.POST['message']
+
+        account = Account.objects.create(
+            name=name,
+            email=email,
+            subject=subject,
+            message=message,
+        )
+
+        return redirect('contact_list')
+
+    return render(request, 'homepage/contact.html', {'accounts': accounts})
 
 # Create your views here.
