@@ -2,34 +2,21 @@
 {% load static %}
 
 {% block main_area %}
-  <div id="main">
-    <div id="content">
-      <p>[ADD OVERVIEW]</p>
-      <h3>[ADD SERVICE NAME]</h3>
-      <p>[ADD SERVICE OVERVIEW]</p>
-      <h3>[ADD SERVICE NAME]</h3>
-      <p>[ADD SERVICE OVERVIEW]</p>
-      <h3>[ADD SERVICE NAME]</h3>
-      <p>[ADD SERVICE OVERVIEW]</p>
-      <h3>[ADD SERVICE NAME]</h3>
-      <p>[ADD SERVICE OVERVIEW]</p>
+    <div id="main"><br>
+        <div id="content">
+            <p><img src="{% static 'homepage/bootstrap/images/port1.png' %}" width="600" height="337"></p><br>
+            <p><img src="{% static 'homepage/bootstrap/images/port2.png' %}" width="600" height="337"></p><br>
+            <p><img src="{% static 'homepage/bootstrap/images/port3.png' %}" width="600" height="337"></p><br>
+            <p><img src="{% static 'homepage/bootstrap/images/port4.png' %}" width="600" height="337"></p><br>
+            <a href="/single_pages"><button class="btn-success">포트폴리오 생성 사이트 바로가기</button></a>
+        </div>
+        <!--end content-->
+        <div class="aside">
+        <div id="sidebar">
+            <h3 class="sidebar-title">Want To Hire Joen Tree?</h3>
+            <p>Our company is always recruiting Highflier.</p>
+            <a class="sidebar-button" href="{% url 'contact' %}">Contact Us &raquo;</a></div></div>
+        <!--end sidebar-->
     </div>
-    <!--end content-->
-    <div id="sidebar">
-      <div id="hire">
-        <h3 class="sidebar-title">Want To Hire [ADD COMPANY NAME]?</h3>
-        <p>[ADD OVERVIEW]</p>
-        <a class="sidebar-button" href="#">Contact Us &raquo;</a> </div>
-      <!--end hire-->
-      <div id="featured-project">
-        <h3>Featured Project</h3>
-        <p>[ADD OVERVIEW]</p>
-        <div class="portfolio-item"> <a href="#"><img src="images/280x200.gif" alt="" /></a> </div>
-        <!--end portfolio-item-->
-        <a class="sidebar-button" href="#">All Projects &raquo;</a> </div>
-      <!--end recent-projects-->
-    </div>
-    <!--end sidebar-->
-  </div>
-  <!--end main-->
+    <!--end main-->
 {% endblock %}
