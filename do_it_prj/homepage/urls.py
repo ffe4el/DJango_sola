@@ -12,6 +12,7 @@ urlpatterns = [
     path('history/',views.history,name='history'),
     path('map/',views.map,name='map'),
     path('business/',views.business,name='business'),
+    path('portfolio/',views.portfolio, name='portfolio'),
     path('recruit/',views.recruit),
     path('contact/',views.contact, name='contact'),
     path('contact_list/',views.account, name='account'),
