@@ -23,10 +23,10 @@ class Reply(models.Model):
 
 
 class Account(models.Model):
-    name = models.TextField(max_length=20,blank=False,default='')
-    email = models.TextField(max_length=20,blank=False,default='')
-    last_updated = models.DateField(auto_now_add=True, null=True)
-    subject = models.CharField(max_length=255, blank=False,default='')
-    message = models.TextField(max_length=1000,blank=False,default='')
+    name = models.TextField(max_length=20)
+    email = models.TextField(max_length=20)
+    last_updated = models.DateField(auto_now_add=True)
+    subject = models.CharField(max_length=255)
+    message = models.TextField(max_length=1000)
 
 # Create your models here.

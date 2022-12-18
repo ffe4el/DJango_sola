@@ -16,6 +16,7 @@ urlpatterns = [
     path('recruit/',views.recruit),
     path('contact/',views.contact, name='contact'),
     path('contact_list/',views.account, name='account'),
+    path('contact_list/<int:pk>/delete',views.account_delete, name='account_delete'),
 
 
     # path('single_pages/',include('single_pages.urls')),
