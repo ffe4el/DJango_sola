@@ -1,5 +1,6 @@
 {% extends 'homepage/basetem.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block main_area %}
     <br><br>
@@ -8,12 +9,12 @@
         {% csrf_token %}
         <div class="form-group">
             <label for="id_subject"> 제목 </label>
-            <input type="text" class="form-control" id="id_subject" name="subject">
+            <input type="text" class="form-control" id="id_subject" name="subject" class="textinput textInput form-control">
         </div>
 
         <div class="form-group">
             <lable for="id_message">내용</lable>
-            <textarea class="form-control" id="id_message" name="message" rows=20></textarea>
+            <textarea class="form-control" id="id_message" name="message" rows=20 class="textinput textInput form-control"></textarea>
         </div>
         <button type="submit" class="btn btn-success">글 등록</button>
 

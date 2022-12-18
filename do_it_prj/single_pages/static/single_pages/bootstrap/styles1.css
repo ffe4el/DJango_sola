@@ -40,8 +40,8 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #7f6765;
-  --bs-primary-rgb: 16,53,81;
-  --bs-secondary-rgb: 111, 133, 150;
+  --bs-primary-rgb: #6F8596;
+  --bs-secondary-rgb: #103551;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
@@ -7807,12 +7807,12 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #6F8596;
 }
 
 .bg-secondary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #103551;
 }
 
 .bg-success {

@@ -68,43 +68,63 @@ def single_post_page(request, pk):
 #     return render(request, 'single_pages/post_form.html')
 
 
+
 class PostCreate(CreateView):
     model = Post
-    fields = ['type','name', 'head_image', 'hook_text', 'port1_title', 'port1', 'port1_img', 'port2_title', 'port2',
-              'port2_img', 'port3_title', 'port3', 'port3_img','port4_title', 'port4', 'port4_img', 'port5_title',
-              'port5', 'port5_img', 'port6_title', 'port6', 'port6_img', 'profile_image', 'about_me', ]
+    fields = ['type', 'name', 'head_image', 'hook_text', 'profile_image', 'about_me', ]
     success_url = '/single_pages'
-    # template_name = 'single_pages/post_form.html'
 
-    # def form_valid(self, form):
-    #     post = form.save(commit=False)
-    #     post.address = form.cleaned_data['head_image']
-    #
-    #     post.save()
-    #     return super().form_valid(form)
-    #     return HttpResponseRedirect(self.get_success_url())
+
+# def create(request):
+#     posts=Post.objects.all()
+#     redirect('/single_pages')
+#     return render(request,'homepage/post_form.html', {'posts': posts})
+
+
 
 #Delete(게시물 삭제)
-class PostDelete(DeleteView) :
+class PostDelete(DeleteView):
     model = Post
     template_name ='single_pages/delete.html'
     success_url='/single_pages' # or reverse_lazy('designer') url 이름
+
+# def delete(request,pk):
+#     posts = Post.objects.get(pk=pk)
+#     posts.delete()
+#     return redirect('index')
+
 
 
 # Update(게시물 수정)
 class PostUpdate(UpdateView):
     model = Post
-    fields = ['type','name', 'head_image', 'hook_text', 'port1_title','port1','port1_img', 'port2_title','port2', 'port2_img','port3_title','port3','port3_img',
-              'port4_title','port4','port4_img','port5_title','port5','port5_img', 'port6_title', 'port6','port6_img','profile_image', 'about_me',]
+    fields = ['type', 'name', 'head_image', 'hook_text', 'profile_image', 'about_me',]
+    # fields = ['type','name', 'head_image', 'hook_text', 'port1_title','port1','port1_img', 'port2_title','port2', 'port2_img','port3_title','port3','port3_img',
+    #           'port4_title','port4','port4_img','port5_title','port5','port5_img', 'port6_title', 'port6','port6_img','profile_image', 'about_me',]
     template_name = 'single_pages/update.html'
     success_url = '/single_pages'  # or reverse_lazy('designer') url 이름
-
     # def form_valid(self, form):
     #     designer = form.save(commit=False)
     #     designer.adress =form.cleaned_data['image']
-
+    #
     #     designer.save()
     #     return super().form_valid(form)
+
+# def update(request,pk):
+#     posts = Post.objects.get(pk=pk)
+#     if request.method == 'POST':
+#         name = request.POST['name']
+#         hook_text = request.POST['hook_text']
+#
+#         post = Post.objects.create(
+#             name=name,
+#             hook_text=hook_text,
+#
+#         )
+#         return redirect('index')
+#     return render(request, 'homepage/update.html', {'posts': posts})
+
+
 
 
 

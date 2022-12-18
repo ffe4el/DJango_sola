@@ -41,8 +41,8 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #7f6765;
-  --bs-primary-rgb: 100,200,30;
-  --bs-secondary-rgb: 42, 117, 59;
+  --bs-primary-rgb: #7fa081;
+  --bs-secondary-rgb: #384739;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
@@ -7762,7 +7762,7 @@ textarea.form-control-lg {
 
 .text-white {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+  color: #FFFFFF;
 }
 
 .text-body {
@@ -7808,12 +7808,12 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #637c64;
 }
 
 .bg-secondary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #384739;
 }
 
 .bg-success {
@@ -11360,13 +11360,13 @@ html {
   font-weight: 700;
 }
 #mainNav .navbar-brand {
-  color: #c7fd5a;
+  color: #FFFFFF;
 }
 #mainNav .navbar-nav {
   margin-top: 1rem;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link {
-  color: #c7fd5a;
+  color: #FFFFFF;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
   color: #fff200;
@@ -11500,8 +11500,8 @@ html {
 .footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: #64c71e;
-  color: #c7fd5a;
+  background-color: #7fa081;
+  color: #2a352b;
 }
 
 .copyright {
