@@ -2,17 +2,15 @@
 {% load static %}
 
 {% block title %}<a href="/"><img src="{% static 'homepage/bootstrap/images/joentree.png' %}" . width="85" , height="50"></a> -
-    <mark style="color:darkolivegreen;">사내 일정 📆</mark>
+    <mark style="color:darkolivegreen; background-color: lightgray;">사내 일정</mark> 📆
 {% endblock %}
 
 {% block content %}
 <div class="clearfix">
 	<a class="btn btn-info left" href="{% url 'cal:calendar' %}?{{ prev_month }}"> 지난 달 </a>
 	&nbsp;<a class="btn btn-info right" href="{% url 'cal:calendar' %}?{{ next_month }}"> 다음 달 </a>
-	{% if user.is_authenticated %}
 	<a class="btn btn-info right" href="{% url 'cal:event_new' %}"> 일정 추가하기 </a>
-	{% else %}
-	{% endif %}
+
 	{% if user.is_authenticated %}
 	<a class="btn btn-info right" href="{% url 'common:logout' %}">{{ user.username }}님 로그아웃</a>
 	{% else %}

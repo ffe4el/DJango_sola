@@ -3,10 +3,11 @@
 
 {% block main_area %}
     <div id="main">
+        <h3>공지사항</h3><hr>
         <button type="button" class="btn btn-success btn-lg">
         <a  href="{% url 'notice_create' %}">글 작성</a></button>
         <div id="content">
-        <h3>공지사항</h3><hr>
+
             {% for t in topics %}
                 <div class="article">
                     <h3 class="article-title"><a href="{% url 'single_page' pk=t.pk %}">{{ t.subject }}</a></h3>
