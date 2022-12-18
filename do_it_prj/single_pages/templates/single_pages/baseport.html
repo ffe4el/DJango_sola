@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title>About {{ name }}</title>
+    <title>About {{ post.name }}</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
     <!-- Font Awesome icons (free version)-->
@@ -16,7 +16,11 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
           type="text/css"/>
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link rel="stylesheet" href="{% static 'single_pages/bootstrap/styles.css' %}">
+    {% if post.type == 'styles' %}
+        <link rel="stylesheet" href="{% static 'single_pages/bootstrap/styles.css' %}">
+    {% elif post.type == 'styles1' %}
+        <link rel="stylesheet" href="{% static 'single_pages/bootstrap/styles1.css' %}">
+    {% endif %}
     <style>
         .profile-user-img {
             width: 350px;

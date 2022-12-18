@@ -3,9 +3,13 @@
 {% load crispy_forms_tags %}
 {% block header1 %}Create New Port{% endblock %}
 
-{% block header %}<h1>Create New Port</h1>{% endblock %}
+{% block header %}<h1>Create New Port</h1><h6>go back <a href="/single_pages">port list</a></h6>{% endblock %}
 
 {% block main_area %}
+    <h4><i>type 예시:</i><br><br>styles로 입력시 <mark style="background-color:lightpink; color:Azure;">'핑크베이지 테마'</mark>,&nbsp;
+        styles1으로 입력시 <mark style="background-color:darkblue; color:Azure;">'네이비테마'</mark>,&nbsp;
+        styles2로 입력시 <mark style="background-color:green; color:Azure;">'그린테마'</mark></h4>
+<br><br><br>
 <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
     <h2>포트폴리오 생성 페이지</h2>
     {{ form | crispy }}
