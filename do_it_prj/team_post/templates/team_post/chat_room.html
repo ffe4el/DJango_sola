@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    {#    <meta http-equiv="refresh" content="2">#}
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="{% static 'team_post/bootstrap/bootstrap.min.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'team_post/css/bootstrap.css' %}" media="screen">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1fb217f3df.js" crossorigin="anonymous"></script>
+    <script src="../../static/team_post/js/bootstrap.bundle.js"></script>
+
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body onscroll="SetDivPosition()">
+<script language="javascript" for="plan6" event="onload">
+
+    var strCook = document.cookie;
+    if (strCook.indexOf("!~") != 0) {
+        var intS = strCook.indexOf("!~");
+        var intE = strCook.indexOf("~!");
+        var strPos = strCook.substring(intS + 2, intE);
+        document.body.scrollTop = strPos;
+    }
+    document.plan6.resizeFrame(this);
+</script>
+
+<script type="text/javascript">
+
+    function SetDivPosition() {
+        var intY = document.body.scrollTop;
+        document.cookie = "yPos=!~" + intY + "~!";
+    }
+</script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+            <div class="navbar-brand">{{ room_name }}</div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">참여 방<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/team_post/">돌아가기</a>
+                    </li>
+                    {#                <li class="nav-item dropdown">#}
+                    {#                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"#}
+                    {#                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+                    {#                        Dropdown#}
+                    {#                    </a>#}
+                    {#                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+                    {#                        <a class="dropdown-item" href="#">Action</a>#}
+                    {#                        <a class="dropdown-item" href="#">Another action</a>#}
+                    {#                        <div class="dropdown-divider"></div>#}
+                    {#                        <a class="dropdown-item" href="#">Something else here</a>#}
+                    {#                    </div>#}
+                    {#                </li>#}
+                    {#                <li class="nav-item">#}
+                    {#                    <a class="nav-link disabled" href="#">Disabled</a>#}
+                    {#                </li>#}
+                </ul>
+                {#            <form class="d-flex" role="search">#}
+                {#                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">#}
+                {#                <button class="btn btn-outline-success" type="submit">Search</button>#}
+                {#            </form>#}
+            </div>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-md-4 bg-white ">
+            <div class=" row border-bottom padding-sm " style="height: 40px; text-align: center;">
+                <h5 class="mt-2">-참여 중-</h5>
+            </div>
+            <!-- =============================================================== -->
+            <!-- member list -->
+            <ul class="friend-list">
+                <li class="active bounceInDown">
+                    <a href="#" class="clearfix">
+                        <img src="../../static/team_post/images/bono1.jpg" alt="" class="img-circle">
+                        <div class="friend-name">
+                            <strong>{{ user.username }}(본인)</strong>
+                        </div>
+{#                        <div class="last-message text-muted"></div>#}
+                    </a>
+                </li>
+                {% for talk in talks.writter %}
+                <li>
+                    <a href="#" class="clearfix">
+                        <img src="../../static/team_post/images/bono3.png" alt="" class="img-circle">
+                        <div class="friend-name">
+                            <strong>{{ talk.username }}</strong>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-8 bg-white ">
+            <div class="chat-message" style="overflow:scroll; padding-top: 10px; height: 500px;" id="chat_pages">
+                <div id="massage-window">
+                    <ul class="chat" style=" padding-left: 16px; padding-right: 16px;">
+                        {% if talks.exists %}
+                            {% for talk in talks %}
+                                {% if talk.writter.username|stringformat:'s' != user.username|stringformat:'s' %}
+                                    <li class="left clearfix">
+                                    <span class="chat-img pull-left">
+                    		        <img src="../../static/team_post/images/bono4.png" alt="User Avatar">
+                    	            </span>
+                                        <div class="chat-body clearfix">
+                                            <div class="header">
+                                                <strong class="primary-font">{{ talk.writter.username }}</strong>
+                                                <small class="pull-right text-muted"><i
+                                                        class="fa fa-clock-o"></i>{{ talk.time_stamp }}</small>
+                                            </div>
+                                            <p>
+                                                {{ talk.massage }}
+                                            </p>
+                                        </div>
+                                    </li>
+                                {% else %}
+                                    <li class="right clearfix" id="massage-window">
+                                 <span class="chat-img pull-right">
+                    		        <img src="../../static/team_post/images/bono1.jpg" alt="User Avatar">
+                                 </span>
+                                        <div class="chat-body clearfix">
+                                            <div class="header">
+                                                <strong class="primary-font">{{ talk.writter.username }}</strong>
+                                                <small class="pull-right text-muted"><i
+                                                        class="fa fa-clock-o"></i> {{ talk.time_stamp }}</small>
+                                            </div>
+                                            <p>
+                                                {{ talk.massage }}
+                                            </p>
+                                        </div>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <div class="chat-box bg-white">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group d-flex">
+                        <input class="form-control border no-shadow no-rounded" placeholder="massage" name="massage">
+                        <span class="input-group-btn">
+            			<button class="btn btn-success no-rounded" type="submit">Send</button>
+            		</span>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                upload
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" onclick="ondisplay2()"><i
+                                        class="fa-solid fa-cloud-arrow-up"></i> Upload files</a></li>
+                                <li><a class="dropdown-item" onclick="ondisplay()">files list</a></li>
+                                <li><a class="dropdown-item" onclick="offdisplay()">Close</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+                <!-- /input-group -->
+            </div>
+            <div id="file_upload" style="display: none; margin-left: 15px;" class="ml-5 mt-2">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <input class="btn btn-primary btn-sm" type="file" name="files">
+                    {% csrf_token %}
+                    <input class="btn btn-primary btn-sm mt-2" type="submit" value="Upload">
+                </form>
+            </div>
+                <table id="file_list" style="display: none;">
+                    <tr>
+                        <th>file</th>
+                    </tr>
+                {% if talks.files.exist %}
+                    {% for talk in talks %}
+                        <tr>
+                            <td><a href="{{ talk.files }}" class="btn btn-outline-warning" role="button"
+                                   download>
+                                Download:
+
+                                {% if post.get_file_ext == 'csv' %}
+                                    <i class="fas fa-file-csv"></i>
+                                {% elif post.get_file_ext == 'xlsx' or post.get_file_ext == 'xls' %}
+                                    <i class="fas fa-file-excel"></i>
+                                {% elif post.get_file_ext == 'docx' or post.get_file_ext == 'doc' %}
+                                    <i class="fas fa-file-word"></i>
+                                {% elif post.get_file_ext == 'pdf' %}
+                                {% else %}
+                                    <i class="far fa-file"></i>
+                                {% endif %}
+                            </a></td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+                </table>
+
+        </div>
+    </div>
+</div>
+{{ room_name|json_script:"room-name" }}
+{{ user.username|json_script:"username" }}
+<script>
+
+    $("#chat_pages").scroll(function () {
+
+
+        var page = $("[name='feed_page']").val();
+        var last_page = $("[name='feed_last_page']").val();
+        if (page == last_page) return;
+
+
+        var innerHeight = $(this).innerHeight();
+        var scroll = $(this).scrollTop() + $(this).innerHeight();
+        var height = $(this)[0].scrollHeight;
+
+    })
+
+    function autofresh() {
+        var currentLocation = window.location;
+        $("#massage-windo").load(currentLocation + ' #massage-window');
+    }
+
+    setInterval('autofresh()', 2000);
+
+
+    function reloadDivArea() {
+        $('#massage-window').load(location.href + ' #massage-window');
+    }
+
+
+    function ondisplay() {
+        $('#file_list').show()
+    }
+
+    function ondisplay2() {
+        $('#file_upload').show()
+    }
+
+    function offdisplay() {
+        $('#file_list').hide()
+        $('#file_upload').hide()
+    }
+
+    function clear_list() {
+        file.delete.all()
+    }
+
+</script>
+</body>
+</html>

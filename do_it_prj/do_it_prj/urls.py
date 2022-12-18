@@ -25,6 +25,9 @@ urlpatterns = [
     path('single_pages/',include('single_pages.urls')),
     path('', include('homepage.urls')),
     path('markdownx/', include('markdownx.urls')),
+    path('common/', include('common.urls')),
+    path('chat/', include('chat.urls')),
+    path('team_post/', include('team_post.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

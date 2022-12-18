@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="{% static 'chat/bootstrap/bootstrap.min.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'chat/css/bootstrap.css' %}" media="screen">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    {#        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">#}
+    {#    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>#}
+    <script src="https://kit.fontawesome.com/1fb217f3df.js" crossorigin="anonymous"></script>
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+{#<script src="{% static 'chat/js/chat_js.js' %}" type="text/javascript"></script>#}
+{#<div class="row chat-window" id="chat_window_1">#}
+{#    <div class="col-xs-12 col-md-12">#}
+{#        <div class="panel panel-default mt-2">#}
+{#            <div class="panel-heading top-bar">#}
+{#                <div class="col-md-8 col-xs-8">#}
+{#                    <h3 class="panel-title"><i class="fa-brands fa-rocketchat"></i> Chat [ {{ room_name }} ]</h3>#}
+{#                </div>#}
+{#                <div class="col-md-4" style="text-align: right;">#}
+{#                    <a href="/chat/"><span class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></span></a>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="panel-body msg_container_base">#}
+{#                <textarea class="col-xs-12 col-md-12 mb-3" id="chat-log" cols="100" rows="20"></textarea>#}
+{#                <div class="panel-footer">#}
+{#                    <div class="input-group mt-5">#}
+{#                        <input id="chat-message-input" type="text" class="form-control input-sm chat_input"#}
+{#                               placeholder="Write your message here..." size="100"/>#}
+{#                        <span class="input-group-btn">#}
+{#                        <input class="btn btn-primary btn-sm" id="chat-message-submit" type="button" value="Send">#}
+{#                        </span>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="row">#}
+{#        <div class="col-3">#}
+{#            <div class="btn-group dropup ml-5">#}
+{#                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">#}
+{#                    <span class="glyphicon glyphicon-cog"><i class="fa-regular fa-circle-ellipsis"></i></span>#}
+{#                    <span class="sr-only"><i class="fa-regular fa-circle-ellipsis"></i></span>#}
+{#                </button>#}
+{#                <ul class="dropdown-menu" role="menu">#}
+{#                    <li><a onclick="ondisplay()"><i class="fa-solid fa-cloud-arrow-up"></i> Upload files</a></li>#}
+{#                    <li><a onclick="offdisplay()">Close</a></li>#}
+{#                </ul>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="col-9">#}
+{#            <form action="" method="POST" enctype="multipart/form-data">#}
+{#                <input class="form-control input-sm chat_input align-right" type="text"#}
+{#                       name="fileTitle"#}
+{#                       placeholder="파일 이름">#}
+{#                <input class="btn btn-primary btn-sm" type="file" name="uploadedFile">#}
+{#                {% csrf_token %}#}
+{#                <input class="btn btn-primary btn-sm mt-2" type="submit" value="Upload"  onclick="reloadDivArea()">#}
+{#            </form>#}
+{##}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#<div id="file_list" style="display: none;" class="table ml-5 mt-2">#}
+{#    <table>#}
+{#        <tr>#}
+{#            <th>Title</th>#}
+{#            <th>Upload Date & Time</th>#}
+{#            <th>Download</th>#}
+{#        </tr>#}
+{#        {% for file in files %}#}
+{#            <tr>#}
+{#                <td>{{ file.title }}</td>#}
+{#                <td>{{ file.dateTimeOfUpload }}</td>#}
+{#                <td><a href="{{ file.uploadedFile.url }}" class="btn btn-outline-warning" role="button" download>#}
+{#                    Download:#}
+{##}
+{#                    {% if post.get_file_ext == 'csv' %}#}
+{#                        <i class="fas fa-file-csv"></i>#}
+{#                    {% elif post.get_file_ext == 'xlsx' or post.get_file_ext == 'xls' %}#}
+{#                        <i class="fas fa-file-excel"></i>#}
+{#                    {% elif post.get_file_ext == 'docx' or post.get_file_ext == 'doc' %}#}
+{#                        <i class="fas fa-file-word"></i>#}
+{#                    {% elif post.get_file_ext == 'pdf' %}#}
+{#                    {% else %}#}
+{#                        <i class="far fa-file"></i>#}
+{#                    {% endif %}#}
+{#                </a></td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#    </table>#}
+{#</div>#}
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+        <div class="col-md-4 bg-white ">
+            <div class=" row border-bottom padding-sm " style="height: 40px; text-align: center;">
+                <h5>Rooms</h5>
+            </div>
+
+            <!-- =============================================================== -->
+            <!-- member list -->
+            <ul class="friend-list">
+                <li class="active bounceInDown">
+                    <a href="#" class="clearfix">
+                        <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
+                        <div class="friend-name">
+                            <strong>heyjin</strong>
+                        </div>
+                        <div class="last-message text-muted">안녕하세요?</div>
+                        <small class="time text-muted">Just now</small>
+                        <small class="chat-alert label label-danger">1</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="clearfix">
+                        <img src="https://bootdey.com/img/Content/user_2.jpg" alt="" class="img-circle">
+                        <div class="friend-name">
+                            <strong>team1</strong>
+                        </div>
+                        <div class="last-message text-muted">10분 뒤에 뵙겠습니다.</div>
+                        <small class="time text-muted">5 mins ago</small>
+                        <small class="chat-alert text-muted"><i class="fa fa-check"></i></small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="clearfix">
+                        <img src="https://bootdey.com/img/Content/user_3.jpg" alt="" class="img-circle">
+                        <div class="friend-name">
+                            <strong>team2</strong>
+                        </div>
+                        <div class="last-message text-muted">떡볶이가 좋을 것 같아요</div>
+                        <small class="time text-muted">Yesterday</small>
+                        <small class="chat-alert text-muted"><i class="fa fa-reply"></i></small>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+        <!--=========================================================-->
+        <!-- selected chat -->
+        <div class="col-md-8 bg-white ">
+            <div class="chat-message" style="padding-top: 10px;">
+                <div class="row border-bottom">
+                    <h3>team2</h3>
+                </div>
+                <ul class="chat" style=" padding-left: 16px; padding-right: 16px;">
+                    <li class="left clearfix">
+                    	<span class="chat-img pull-left">
+                    		<img src="https://bootdey.com/img/Content/user_3.jpg" alt="User Avatar">
+                    	</span>
+                        <div class="chat-body clearfix">
+                            <div class="header">
+                                <strong class="primary-font">사람1</strong>
+                                <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
+                            </div>
+                            <p>
+                                저녁 메뉴는?
+                            </p>
+                        </div>
+                    </li>
+                    {% for Massage in Massages %}
+                    <li class="right clearfix">
+                    	<span class="chat-img pull-right">
+                    		<img src="https://bootdey.com/img/Content/user_1.jpg" alt="User Avatar">
+                    	</span>
+                        <div class="chat-body clearfix">
+                            <div class="header">
+                                <strong class="primary-font">{{ Massage.author.username }}</strong>
+                                <small class="pull-right text-muted"><i class="fa fa-clock-o"></i>{{ Massage.timestamp }}</small>
+                            </div>
+                            <p>
+                                {{ Massage.content }}
+                            </p>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="chat-box bg-white">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input class="form-control border no-shadow no-rounded" placeholder="massage" name="content">
+                        <span class="input-group-btn">
+            			<button class="btn btn-success no-rounded" type="submit">Send</button>
+            		</span>
+                    </div>
+                </form>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            upload
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" onclick="ondisplay()"><i
+                                    class="fa-solid fa-cloud-arrow-up"></i> Upload files</a></li>
+                            <li><a class="dropdown-item" onclick="offdisplay()">Close</a></li>
+                        </ul>
+                    </div>
+                    <!-- /input-group -->
+            </div>
+            <div id="file_list" style="display: none;" class="table ml-5 mt-2">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <label>
+                        <input class="form-control input-sm chat_input align-right" type="text"
+                               name="fileTitle"
+                               placeholder="파일 이름">
+                    </label>
+                    <input class="btn btn-primary btn-sm" type="file" name="uploadedFile">
+                    {% csrf_token %}
+                    <input class="btn btn-primary btn-sm mt-2" type="submit" value="Upload" onclick="reloadDivArea()">
+                </form>
+                <table>
+                    <tr>
+                        <th>Title</th>
+                        <th>Upload Date & Time</th>
+                        <th>Download</th>
+                    </tr>
+                    {% for file in files %}
+                        <tr>
+                            <td>{{ file.title }}</td>
+                            <td>{{ file.dateTimeOfUpload }}</td>
+                            <td><a href="{{ file.uploadedFile.url }}" class="btn btn-outline-warning" role="button"
+                                   download>
+                                Download:
+
+                                {% if post.get_file_ext == 'csv' %}
+                                    <i class="fas fa-file-csv"></i>
+                                {% elif post.get_file_ext == 'xlsx' or post.get_file_ext == 'xls' %}
+                                    <i class="fas fa-file-excel"></i>
+                                {% elif post.get_file_ext == 'docx' or post.get_file_ext == 'doc' %}
+                                    <i class="fas fa-file-word"></i>
+                                {% elif post.get_file_ext == 'pdf' %}
+                                {% else %}
+                                    <i class="far fa-file"></i>
+                                {% endif %}
+                            </a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{{ room_name|json_script:"room-name" }}
+{{ user.username|json_script:"username" }}
+<script>
+
+    function reloadDivArea() {
+        $('#file_list').load(location.href + ' #file_list');
+    }
+
+
+    function ondisplay() {
+        $('#file_list').show()
+    }
+
+    function offdisplay() {
+        $('#file_list').hide()
+    }
+
+    function clear_list() {
+        file.delete.all()
+    }
+
+    {##}
+    {#const roomName = JSON.parse(document.getElementById('room-name').textContent);#}
+    {#const username = JSON.parse(document.getElementById('username').textContent);#}
+    {##}
+    {##}
+    {#const chatSocket = new WebSocket(#}
+    {#    'ws://'#}
+    {#    + window.location.host#}
+    {#    + '/ws/chat/'#}
+    {#    + roomName#}
+    {#    + '/'#}
+    {#);#}
+    {##}
+    {##}
+    {#chatSocket.onmessage = function (e) {#}
+    {#    const data = JSON.parse(e.data);#}
+    {#    document.querySelector('#chat-log').value += (data.username + ":" + " " + data.message + '\n');#}
+    {#}#}
+        {##}
+        {#;#}
+        {##}
+        {#chatSocket.onclose = function (e) {#}
+        {#    console.error('Chat socket closed unexpectedly');#}
+        {#}#}
+            {#;#}
+            {##}
+            {#document.querySelector('#chat-message-input').focus();#}
+            {#document.querySelector('#chat-message-input').onkeyup = function (e) {#}
+            {#    document.querySelector('#chat-message-input').onkeyup#}
+            {#    if (e.keyCode === 13) {  // enter, return#}
+            {#        document.querySelector('#chat-message-submit').click();#}
+            {#    }#}
+            {#}#}
+                {#;#}
+                {##}
+                {##}
+                {#document.querySelector('#chat-message-submit').onclick = function (e) {#}
+                {#    const messageInputDom = document.querySelector('#chat-message-input');#}
+                {#    const message = messageInputDom.value;#}
+                {#    chatSocket.send(JSON.stringify({#}
+                {#        "username": username,#}
+                {#        'message': message,#}
+                {#    }));#}
+                {#    messageInputDom.value = '';#}
+                {
+    #}#}
+    {#;#}
+
+</script>
+</body>
+</html>

@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'blog',
     'homepage',
     'single_pages',
+    'chat',
+    'common',
+    'team_post',
 ]
 
 MIDDLEWARE = [
@@ -136,4 +139,15 @@ MARKDOWNX_MARKDOWN_EXTENSION_CONFIGS = {
         'use_pygments': True,
         'noclasses': True
     }
+}
+
+ASGI_APPLICATION = 'do_it_prj.routing.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
 }
