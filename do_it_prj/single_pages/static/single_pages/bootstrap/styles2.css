@@ -41,7 +41,7 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #7f6765;
-  --bs-primary-rgb: 178,144,142;
+  --bs-primary-rgb: 100,200,30;
   --bs-secondary-rgb: 124, 100, 99;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
@@ -236,7 +236,7 @@ sup {
 }
 
 a {
-  color: #fa8072;
+  color: #2a753b;
   text-decoration: underline;
 }
 a:hover {
@@ -3031,8 +3031,8 @@ textarea.form-control-lg {
 
 .btn-primary {
   color: #fff;
-  background-color: #fa8072;
-  border-color: #fa8072;
+  background-color: #2a753b;
+  border-color: #2a753b;
 }
 .btn-primary:hover {
   color: #fff;
@@ -4804,7 +4804,7 @@ textarea.form-control-lg {
 .page-link {
   position: relative;
   display: block;
-  color: #fa8072;
+  color: #fff200;
   text-decoration: none;
   background-color: #fff;
   border: 0.125rem solid #dee2e6;
@@ -11317,7 +11317,7 @@ html {
   width: 100%;
   max-width: 7rem;
   height: 0.25rem;
-  background-color: #b18f8e;
+  background-color: #2a753b;
   border-radius: 1rem;
   border-color: #ffd8d5;
 }
@@ -11328,7 +11328,7 @@ html {
   margin-left: 1rem;
 }
 .divider-custom .divider-custom-icon {
-  color: #b18f8e;
+  color: #2a753b;
   font-size: 2rem;
 }
 .divider-custom.divider-light .divider-custom-line {
@@ -11360,7 +11360,7 @@ html {
   font-weight: 700;
 }
 #mainNav .navbar-brand {
-  color: #fff;
+  color: #c9d23e;
 }
 #mainNav .navbar-nav {
   margin-top: 1rem;
@@ -11396,12 +11396,12 @@ html {
     margin-top: 0;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
-    color: #fff;
-    background: #fa8072;
+    color: #c9d23e;
+    background: #d29e3e;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
-    color: #fff;
-    background: #b18f8e;
+    color: #d29e3e;
+    background: #c9d23e;
   }
 
   #mainNav.navbar-shrink {
@@ -11472,7 +11472,7 @@ html {
   left: 0;
   transition: all 0.2s ease-in-out;
   opacity: 0;
-  background-color: rgb(177, 143, 142);
+  background-color: rgb(201, 210, 62);
 }
 .portfolio .portfolio-item .portfolio-item-caption:hover {
   opacity: 1;
@@ -11505,5 +11505,5 @@ html {
 }
 
 .copyright {
-  background-color: #473938;
+  background-color: #26521a;
 }
