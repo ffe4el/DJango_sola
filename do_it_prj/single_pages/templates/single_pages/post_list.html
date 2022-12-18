@@ -6,7 +6,11 @@
 {% block header %}<h1>Porfolio List</h1>{% endblock %}
 
 {% block main_area %}
-
+<a href="{% url 'create' %}">
+        <button style="cursor: crosshair">
+            💖 포트폴리오 생성 💖
+        </button>
+    </a><br><br><br><br>
 {% if posts.exists %}
     {% for p in posts %}
         <div>
@@ -40,9 +44,5 @@
 
 
     <br>
-    <a href="{% url 'create' %}">
-        <button style="cursor: crosshair">
-            포트폴리오 생성
-        </button>
-    </a>
+
 {% endblock %}

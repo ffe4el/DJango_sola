@@ -144,7 +144,7 @@ def contact(request):
             message=message,
         )
 
-        return redirect('contact_list')
+        return redirect('account')
 
     return render(request, 'homepage/contact.html', {'accounts': accounts})
 

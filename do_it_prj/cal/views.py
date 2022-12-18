@@ -64,7 +64,7 @@ def event(request, event_id=None):
 def event_delete(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
     event.delete()
-    return redirect('/calendar')
+    return redirect('cal:calendar')
 
 def event_none(request):
-    return redirect('/calendar')
+    return redirect('cal:calendar')
