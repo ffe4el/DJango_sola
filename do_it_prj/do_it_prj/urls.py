@@ -28,6 +28,7 @@ urlpatterns = [
     path('common/', include('common.urls')),
     path('chat/', include('chat.urls')),
     path('team_post/', include('team_post.urls')),
+    path('reserv/', include('cal.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
