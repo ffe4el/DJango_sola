@@ -132,8 +132,6 @@ def account_delete(request,pk):
     accounts = Account.objects.get(pk=pk)
     accounts.delete()
     return redirect('account')
-    # return render(request, 'homepage/contact_list.html', {'accounts': accounts})
-
 
 def contact(request):
     accounts = Account.objects.all()
