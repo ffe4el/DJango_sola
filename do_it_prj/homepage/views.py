@@ -130,10 +130,9 @@ def account(request):
 
 def account_delete(request,pk):
     accounts = Account.objects.get(pk=pk)
-    if request.method == 'POST':
-        accounts.delete()
-        return redirect('account')
-    return render(request, 'homepage/contact_list.html', {'accounts': accounts})
+    accounts.delete()
+    return redirect('account')
+    # return render(request, 'homepage/contact_list.html', {'accounts': accounts})
 
 
 def contact(request):
