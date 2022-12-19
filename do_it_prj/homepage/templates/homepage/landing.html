@@ -43,11 +43,13 @@
         </div>
         <!--end frontpage-content-->
         <div id="latest-article" class="frontpage-section">
-            <h3>Latest Article</h3>
-            <a class="article-title" href="#">[ADD ARTICLE TITLE]</a>
-            <p class="meta">Posted By: [ADD AUTHOR NAME]</p>
-            <p>[ADD ARTICLE OVERVIEW]</p>
-            <a class="read-more" href="#">Read More &raquo;</a></div>
+            <h3>🗣 Now Team Post Rooms</h3>
+            {% for room  in rooms %}
+            <a class="article-title" href="{{ room.get_absolute_url }}">💜 {{ room.roomname }}</a><br>
+            {% endfor %}
+{#            <p class="meta">Posted By: [ADD AUTHOR NAME]</p>#}
+{#            <p>[ADD ARTICLE OVERVIEW]</p>#}
+            <a class="read-more" href="/team_post">Go to Site &raquo;</a></div>
         <!--end frontpage-sidebar-->
     </div>
 {% endblock %}

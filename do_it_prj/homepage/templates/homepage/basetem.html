@@ -68,7 +68,12 @@
                     {#                        <li><a href="/notice">공지사항</a><br></li>#}
                     {#                    </ul>#}
                 </li>
-                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/portfolio">Portfolio</a>
+                    <ul class="sub-menu order1">
+                        <li><a href="/portfolio">포트폴리오 사업 소개</a><br></li>
+                        <li><a href="/single_pages">포트폴리오 사이트 바로가기</a><br></li>
+                    </ul>
+                </li>
                 <li><a href="/recruit">Recruit</a></li>
                 <li><a href="/contact">Contact</a>
                     <ul class="sub-menu order1">
@@ -90,7 +95,8 @@
 
                     {% if user.is_authenticated %}
                         <a href="{% url 'common:logout' %}">
-                            <input type="button" class="login-btn" style='width:110px' value='{{ user.username }}&nbsp;LOGOUT'/>
+                            <input type="button" class="login-btn" style='width:110px'
+                                   value='{{ user.username }}&nbsp;LOGOUT'/>
                         </a>
                     {% else %}
                         <a href="{% url 'common:login' %}">

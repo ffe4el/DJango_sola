@@ -3,15 +3,17 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from .models import Topic, Reply, Account
 from django.http import HttpResponse
-
+from team_post.models import room, talk
 
 def landing(request):
+    rooms = room.objects.all()
     topics = Topic.objects.all().order_by('-pk')
     return render(
         request,
         'homepage/landing.html',
         {
             'topics': topics,
+            'rooms': rooms,
         }
     )
 
