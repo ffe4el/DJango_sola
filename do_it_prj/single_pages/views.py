@@ -6,6 +6,7 @@ from .models import Post
 from django.urls import reverse
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
+from homepage.models import Account
 
 # def landing(request):
 #     return render(
@@ -40,12 +41,27 @@ def index(request):
 
 def single_post_page(request, pk):
     post = Post.objects.get(pk=pk)
+    accounts = Account.objects.all()
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        message = request.POST['message']
 
+        account = Account.objects.create(
+            name=name,
+            email=email,
+            subject=subject,
+            message=message,
+        )
+
+        return redirect('single_post_page', pk)
     return render(
         request,
         'single_pages/post_detail.html',
         {
-            'post': post
+            'post': post,
+            'accounts': accounts,
         }
     )
 
@@ -126,8 +142,6 @@ class PostUpdate(UpdateView):
 #         )
 #         return redirect('index')
 #     return render(request, 'homepage/update.html', {'posts': posts})
-
-
 
 
 

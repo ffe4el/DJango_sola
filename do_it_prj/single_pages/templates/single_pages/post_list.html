@@ -7,7 +7,7 @@
 
 {% block main_area %}
 <a href="{% url 'create' %}">
-        <button style="cursor: crosshair">
+        <button class="btn btn-primary btn-xl disabled" style="cursor: crosshair">
             💖 포트폴리오 생성 💖
         </button>
     </a><br><br><br><br>
@@ -23,13 +23,13 @@
             <h4 style="cursor: copy"><a href="{% url 'single_post_page' pk=p.pk %}">{{ p.name }}</a><br><br>{{ p.hook_text }}</h4>
             <br>
             <a href="{% url 'delete' pk=p.pk %}">
-                <button>
+                <button class="btn btn-primary btn-xl disabled">
                     삭제
                 </button>
             </a>
 
             <a href="{% url 'update' pk=p.pk %}">
-                <button>
+                <button class="btn btn-primary btn-xl disabled">
                     수정
                 </button>
             </a>
