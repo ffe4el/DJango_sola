@@ -132,7 +132,8 @@
                     <td><textarea class="form-control" id="id_port5" name="port5" rows=20
                                   class="textinput textInput form-control" placeholder="content"></textarea></td>
                 </tr>
-                <input type="button" value="삭제" onclick="remove_item(this)">
+                <tr>
+                <input type="button" value="삭제" onclick="remove_item(this)"></tr>
             </div>
             <br>
 
@@ -155,9 +156,9 @@
                                   class="textinput textInput form-control" placeholder="content"></textarea></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type="button" value="삭제" onclick="remove_item(this)"></td>
+                    <td colspan="2"><input type="button" value="삭제" onclick="remove_item1(this)"></td>
                      <td colspan="2"><div id="field"></div>
-                         <input type="button" value=" 추가 " onclick="add_item()"><br></td>
+                         <input type="button" value=" 추가 " onclick="add_item1()"><br></td>
                 </tr>
             </div>
         </table>
@@ -165,7 +166,9 @@
 
         <button type="submit" class="btn btn-primary float-right">Create</button>
 
-        <script>
+
+    </form>
+<script>
             function add_item1() {
                 // pre_set 에 있는 내용을 읽어와서 처리..
                 var div = document.createElement('div');
@@ -178,7 +181,5 @@
                 document.getElementById('field').removeChild(obj.parentNode);
             }
         </script>
-    </form>
-
     {{ form.media }}
 {% endblock %}
