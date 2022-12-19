@@ -18,7 +18,7 @@
 
         <!--end content-->
         <div class="aside">
-            {% if user.is_authenticated %}
+            {% if user.is_superuser %}
                 <br>
                 <button type="button" class="btn btn-success btn-lg">
                     <a href="{% url 'notice_create' %}">글 작성</a></button>
