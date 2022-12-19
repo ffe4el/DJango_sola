@@ -11,7 +11,11 @@
 
 <form action="" method="post">{% csrf_token %}
     <p>진짜 삭제할건가요? <br>"{{ object }}"?</p>
-    <input type="submit" value="삭제" />
+
+    <tr>
+        <td><input type="submit" value="삭제" /></td>
+        <td><a href="/single_pages"><input type="submit" value="취소" /></a></td>
+    </tr>
 
 </form>
 

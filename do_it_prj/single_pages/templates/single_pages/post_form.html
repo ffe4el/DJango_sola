@@ -15,203 +15,205 @@
         styles2로 입력시
         <mark style="background-color:green; color:Azure;">'그린테마'</mark>
     </h4>
-    <br><br><br>
+    <br><br>
     <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
 
-        <table>
+{#        <table>#}
             {{ form | crispy }}
-            <div id="field">
-                <div id="port1">
-                    <tr>
-                        <td colspan="2"><label for="id_port1_img">
-                            👇🏻 port1에 이미지 올리기 👇🏻
-                        </label>
-                            <br>
-                            <input type="file" id="id_port1_img" name="port1_img" accept="image/*"></td>
-                    </tr>
-                    <tr>
 
-                        <th><label for="id_port1_title">Port1</label></th>
-                        <td><input type="text" name="port1_title" id="id_port1_title" placeholder="title"
-                                   class="form-control"></td>
-                    </tr>
-                    <tr>
-                        <th><label for="id_port1">Port1</label></th>
-                        <td><textarea class="form-control" id="id_port1" name="port1" rows='20' cols="100"
-                                      class="textinput textInput form-control" placeholder="content"></textarea></td>
-                    </tr>
-                    <input type="button" value="삭제" onclick="remove_item1(this)">
-                </div>
-                <input type="button" value=" 추가 " onclick="add_item1()">
-            </div>
-
-            <br>
-
-
-            <div id="port2">
-                <tr>
-                    <td colspan="2"><label for="id_port2_img">
-                        👇🏻 port2에 이미지 올리기 👇🏻
-                    </label>
-                        <br>
-                        <input type="file" id="id_port2_img" name="port2_img" accept="image/*"></td>
-                </tr>
-                <tr>
-                    <th><label for="id_port2_title">Port2</label></th>
-                    <td><input type="text" name="port1_title" id="id_port2_title" placeholder="title"
-                               class="form-control"></td>
-                </tr>
-                <tr>
-                    <th><label for="id_port2">Port2</label></th>
-                    <td><textarea class="form-control" id="id_port2" name="port2" rows=20
-                                  class="textinput textInput form-control" placeholder="content"></textarea></td>
-                </tr>
-                <br>
-            </div>
-
-
-            <div id="port3">
-                <tr>
-                    <td colspan="2"><label for="id_port3_img">
-                        👇🏻 port3에 이미지 올리기 👇🏻
-                    </label>
-                        <br>
-                        <input type="file" id="id_port3_img" name="port3_img" accept="image/*"></td>
-                </tr>
-                <tr>
-                    <th><label for="id_port3_title">Port3</label></th>
-                    <td><input type="text" name="port3_title" id="id_port3_title" placeholder="title"
-                               class="form-control"></td>
-                </tr>
-                <tr>
-                    <th><label for="id_port3">Port3</label></th>
-                    <td><textarea class="form-control" id="id_port3" name="port3" rows=20
-                                  class="textinput textInput form-control" placeholder="content"></textarea></td>
-                </tr>
-            </div>
-            <br>
-
-
-            <div id="port4">
-                <tr>
-                    <td colspan="2"><label for="id_port4_img">
-                        👇🏻 port4에 이미지 올리기 👇🏻
-                    </label>
-                        <br>
-                        <input type="file" id="id_port4_img" name="port4_img" accept="image/*"></td>
-                </tr>
-                <tr>
-                    <th><label for="id_port4_title">Port4</label></th>
-                    <td><input type="text" name="port4_title" id="id_port4_title" placeholder="title"
-                               class="form-control"></td>
-                </tr>
-                <tr>
-                    <th><label for="id_port4">Port4</label></th>
-                    <td><textarea class="form-control" id="id_port4" name="port4" rows=20
-                                  class="textinput textInput form-control" placeholder="content"></textarea></td>
-                </tr>
-            </div>
-            <br>
-
-
-            <div id="port5">
-                <tr>
-                    <td colspan="2"><label for="id_port5_img">
-                        👇🏻 port5에 이미지 올리기 👇🏻
-                    </label>
-                        <br>
-                        <input type="file" id="id_port5_img" name="port5_img" accept="image/*"></td>
-                </tr>
-                <tr>
-                    <th><label for="id_port5_title">Port5</label></th>
-                    <td><input type="text" name="port5_title" id="id_port5_title" placeholder="title"
-                               class="form-control"></td>
-                </tr>
-                <tr>
-                    <th><label for="id_port5">Port5</label></th>
-                    <td><textarea class="form-control" id="id_port5" name="port5" rows=20
-                                  class="textinput textInput form-control" placeholder="content"></textarea></td>
-                </tr>
-                <tr>
-            </div>
-            <br>
-
-            <div id="port6">
-                <tr>
-                    <td colspan="2"><label for="id_port6_img">
-                        👇🏻 port6에 이미지 올리기 👇🏻
-                    </label>
-                        <br>
-                        <input type="file" id="id_port6_img" name="port6_img" accept="image/*"></td>
-                </tr>
-                <tr>
-                    <th><label for="id_port6_title">Port6</label></th>
-                    <td><input type="text" name="port6_title" id="id_port6_title" placeholder="title"
-                               class="form-control"></td>
-                </tr>
-                <tr>
-                    <th><label for="id_port6">Port6</label></th>
-                    <td><textarea class="form-control" id="id_port6" name="port6" rows=20
-                                  class="textinput textInput form-control" placeholder="content"></textarea></td>
-                </tr>
+{#            <div id="field">#}
+{#                <div id="port1">#}
+{#                    <tr>#}
+{#                        <td colspan="2"><label for="id_port1_img">#}
+{#                            👇🏻 port1에 이미지 올리기 👇🏻#}
+{#                        </label>#}
+{#                            <br>#}
+{#                            <input type="file" id="id_port1_img" name="port1_img" accept="image/*"></td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{##}
+{#                        <th><label for="id_port1_title">Port1</label></th>#}
+{#                        <td><input type="text" name="port1_title" id="id_port1_title" placeholder="title"#}
+{#                                   class="form-control"></td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <th><label for="id_port1">Port1</label></th>#}
+{#                        <td><textarea class="form-control" id="id_port1" name="port1" rows='20' cols="100"#}
+{#                                      class="textinput textInput form-control" placeholder="content"></textarea></td>#}
+{#                    </tr>#}
+{#                    <input type="button" value="삭제" onclick="remove_item1(this)">#}
+{#                </div>#}
+{#                <input type="button" value=" 추가 " onclick="add_item1()">#}
+{#            </div>#}
+{##}
+{#            <br>#}
+{##}
+{##}
+{#            <div id="port2">#}
+{#                <tr>#}
+{#                    <td colspan="2"><label for="id_port2_img">#}
+{#                        👇🏻 port2에 이미지 올리기 👇🏻#}
+{#                    </label>#}
+{#                        <br>#}
+{#                        <input type="file" id="id_port2_img" name="port2_img" accept="image/*"></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th><label for="id_port2_title">Port2</label></th>#}
+{#                    <td><input type="text" name="port1_title" id="id_port2_title" placeholder="title"#}
+{#                               class="form-control"></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th><label for="id_port2">Port2</label></th>#}
+{#                    <td><textarea class="form-control" id="id_port2" name="port2" rows=20#}
+{#                                  class="textinput textInput form-control" placeholder="content"></textarea></td>#}
+{#                </tr>#}
+{#                <br>#}
+{#            </div>#}
+{##}
+{##}
+{#            <div id="port3">#}
+{#                <tr>#}
+{#                    <td colspan="2"><label for="id_port3_img">#}
+{#                        👇🏻 port3에 이미지 올리기 👇🏻#}
+{#                    </label>#}
+{#                        <br>#}
+{#                        <input type="file" id="id_port3_img" name="port3_img" accept="image/*"></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th><label for="id_port3_title">Port3</label></th>#}
+{#                    <td><input type="text" name="port3_title" id="id_port3_title" placeholder="title"#}
+{#                               class="form-control"></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th><label for="id_port3">Port3</label></th>#}
+{#                    <td><textarea class="form-control" id="id_port3" name="port3" rows=20#}
+{#                                  class="textinput textInput form-control" placeholder="content"></textarea></td>#}
+{#                </tr>#}
+{#            </div>#}
+{#            <br>#}
+{##}
+{##}
+{#            <div id="port4">#}
+{#                <tr>#}
+{#                    <td colspan="2"><label for="id_port4_img">#}
+{#                        👇🏻 port4에 이미지 올리기 👇🏻#}
+{#                    </label>#}
+{#                        <br>#}
+{#                        <input type="file" id="id_port4_img" name="port4_img" accept="image/*"></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th><label for="id_port4_title">Port4</label></th>#}
+{#                    <td><input type="text" name="port4_title" id="id_port4_title" placeholder="title"#}
+{#                               class="form-control"></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th><label for="id_port4">Port4</label></th>#}
+{#                    <td><textarea class="form-control" id="id_port4" name="port4" rows=20#}
+{#                                  class="textinput textInput form-control" placeholder="content"></textarea></td>#}
+{#                </tr>#}
+{#            </div>#}
+{#            <br>#}
+{##}
+{##}
+{#            <div id="port5">#}
+{#                <tr>#}
+{#                    <td colspan="2"><label for="id_port5_img">#}
+{#                        👇🏻 port5에 이미지 올리기 👇🏻#}
+{#                    </label>#}
+{#                        <br>#}
+{#                        <input type="file" id="id_port5_img" name="port5_img" accept="image/*"></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th><label for="id_port5_title">Port5</label></th>#}
+{#                    <td><input type="text" name="port5_title" id="id_port5_title" placeholder="title"#}
+{#                               class="form-control"></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th><label for="id_port5">Port5</label></th>#}
+{#                    <td><textarea class="form-control" id="id_port5" name="port5" rows=20#}
+{#                                  class="textinput textInput form-control" placeholder="content"></textarea></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#            </div>#}
+{#            <br>#}
+{##}
+{#            <div id="port6">#}
+{#                <tr>#}
+{#                    <td colspan="2"><label for="id_port6_img">#}
+{#                        👇🏻 port6에 이미지 올리기 👇🏻#}
+{#                    </label>#}
+{#                        <br>#}
+{#                        <input type="file" id="id_port6_img" name="port6_img" accept="image/*"></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th><label for="id_port6_title">Port6</label></th>#}
+{#                    <td><input type="text" name="port6_title" id="id_port6_title" placeholder="title"#}
+{#                               class="form-control"></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th><label for="id_port6">Port6</label></th>#}
+{#                    <td><textarea class="form-control" id="id_port6" name="port6" rows=20#}
+{#                                  class="textinput textInput form-control" placeholder="content"></textarea></td>#}
+{#                </tr>#}
                 {#                <tr>#}
                 {#                    <td colspan="2"><input type="button" value="삭제" onclick="remove_item1(this)"></td>#}
                 {#                     <td colspan="2">#}
                 {#                         <input type="button" value=" 추가 " onclick="add_item1()"><br></td>#}
                 {#                </tr>#}
-            </div>
-        </table>
-        <br>
-
+{#            </div>#}
+{#        </table>#}
+{#        <br>#}
+{##}
+        <br><br>
         <button type="submit" class="btn btn-primary float-right">Create</button>
 
 
     </form>
-    <script>
-        function add_item1() {
-            // pre_set 에 있는 내용을 읽어와서 처리..
-            var div = document.createElement('div');
-            div.innerHTML = document.getElementById('port1').innerHTML;
-            document.getElementById('field').appendChild(div);
-        }
-
-        function remove_item1(obj) {
-            // obj.parentNode 를 이용하여 삭제
-            document.getElementById('field').removeChild(obj.parentNode);
-        }
-    </script>
+{#    <script>#}
+{#        function add_item1() {#}
+{#            // pre_set 에 있는 내용을 읽어와서 처리..#}
+{#            var div = document.createElement('div');#}
+{#            div.innerHTML = document.getElementById('port1').innerHTML;#}
+{#            document.getElementById('field').appendChild(div);#}
+{#        }#}
+{##}
+{#        function remove_item1(obj) {#}
+{#            // obj.parentNode 를 이용하여 삭제#}
+{#            document.getElementById('field').removeChild(obj.parentNode);#}
+{#        }#}
+{#    </script>#}
     {{ form.media }}
 {% endblock %}
 
 
-<script type="text/javascript">
-    $(function () {
-        // 동적으로 엘리먼트 추가
-        var tmp1 = "<input type='text' id='input1' value='b1ix.net'>"
-        tmp1 += "<input id='file1' type='file'>"
-        $('#div1').append(tmp1)
-
-        $('#btn1').click(function () {
-            // 임의의 FormData객체 생성
-            var tmp_form = new FormData()
-            // 동적 text 타입 엘리먼트 추가
-            tmp_form.append('input1', $('#input1').val())
-            // 동적 file 타입 엘리먼트 추가
-            tmp_form.append('file1', $('#file1')[0].files[0]);
-
-            $.ajax({
-                type: 'post'
-                , url: '/410'
-                , processData: false
-                , contentType: false
-                , data: tmp_form
-                , success: function (data) {
-                    // console.log(data)
-                }
-                , error: function (xhr, status, msg) {
-                    console.log(xhr)
-                }
-            });
-        })
-    })
-</script>
+{#<script type="text/javascript">#}
+{#    $(function () {#}
+{#        // 동적으로 엘리먼트 추가#}
+{#        var tmp1 = "<input type='text' id='input1' value='b1ix.net'>"#}
+{#        tmp1 += "<input id='file1' type='file'>"#}
+{#        $('#div1').append(tmp1)#}
+{##}
+{#        $('#btn1').click(function () {#}
+{#            // 임의의 FormData객체 생성#}
+{#            var tmp_form = new FormData()#}
+{#            // 동적 text 타입 엘리먼트 추가#}
+{#            tmp_form.append('input1', $('#input1').val())#}
+{#            // 동적 file 타입 엘리먼트 추가#}
+{#            tmp_form.append('file1', $('#file1')[0].files[0]);#}
+{##}
+{#            $.ajax({#}
+{#                type: 'post'#}
+{#                , url: '/410'#}
+{#                , processData: false#}
+{#                , contentType: false#}
+{#                , data: tmp_form#}
+{#                , success: function (data) {#}
+{#                    // console.log(data)#}
+{#                }#}
+{#                , error: function (xhr, status, msg) {#}
+{#                    console.log(xhr)#}
+{#                }#}
+{#            });#}
+{#        })#}
+{#    })#}
+{#</script>#}

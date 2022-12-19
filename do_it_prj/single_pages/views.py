@@ -71,7 +71,10 @@ def single_post_page(request, pk):
 
 class PostCreate(CreateView):
     model = Post
-    fields = ['type', 'name', 'head_image', 'hook_text', 'profile_image', 'about_me', ]
+    fields = ['type', 'name', 'head_image', 'hook_text', 'port1_title', 'port1', 'port1_img', 'port2_title', 'port2',
+              'port2_img', 'port3_title', 'port3', 'port3_img','port4_title', 'port4',
+              'port4_img', 'port5_title', 'port5', 'port5_img', 'port6_title', 'port6',
+              'port6_img', 'profile_image', 'about_me', ]
     success_url = '/single_pages'
 
 
@@ -98,9 +101,9 @@ class PostDelete(DeleteView):
 # Update(게시물 수정)
 class PostUpdate(UpdateView):
     model = Post
-    fields = ['type', 'name', 'head_image', 'hook_text', 'profile_image', 'about_me',]
-    # fields = ['type','name', 'head_image', 'hook_text', 'port1_title','port1','port1_img', 'port2_title','port2', 'port2_img','port3_title','port3','port3_img',
-    #           'port4_title','port4','port4_img','port5_title','port5','port5_img', 'port6_title', 'port6','port6_img','profile_image', 'about_me',]
+    # fields = ['type', 'name', 'head_image', 'hook_text', 'profile_image', 'about_me',]
+    fields = ['type','name', 'head_image', 'hook_text', 'port1_title','port1','port1_img', 'port2_title','port2', 'port2_img','port3_title','port3','port3_img',
+              'port4_title','port4','port4_img','port5_title','port5','port5_img', 'port6_title', 'port6','port6_img','profile_image', 'about_me',]
     template_name = 'single_pages/update.html'
     success_url = '/single_pages'  # or reverse_lazy('designer') url 이름
     # def form_valid(self, form):
