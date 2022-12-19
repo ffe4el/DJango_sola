@@ -20,7 +20,7 @@
 
         <table>
             {{ form | crispy }}
-
+        <div id="field">
             <div id="port1">
                 <tr>
                     <td colspan="2"><label for="id_port1_img">
@@ -40,8 +40,11 @@
                     <td><textarea class="form-control" id="id_port1" name="port1" rows='20' cols="100"
                                   class="textinput textInput form-control" placeholder="content"></textarea></td>
                 </tr>
-                <input type="button" value="삭제" onclick="remove_item(this)">
+                <input type="button" value="삭제" onclick="remove_item1(this)">
             </div>
+            <input type="button" value=" 추가 " onclick="add_item1()">
+        </div>
+
             <br>
 
 
@@ -64,7 +67,6 @@
                                   class="textinput textInput form-control" placeholder="content"></textarea></td>
                 </tr>
                 <br>
-                <input type="button" value="삭제" onclick="remove_item(this)">
             </div>
 
 
@@ -86,7 +88,6 @@
                     <td><textarea class="form-control" id="id_port3" name="port3" rows=20
                                   class="textinput textInput form-control" placeholder="content"></textarea></td>
                 </tr>
-                <input type="button" value="삭제" onclick="remove_item(this)">
             </div>
             <br>
 
@@ -109,7 +110,6 @@
                     <td><textarea class="form-control" id="id_port4" name="port4" rows=20
                                   class="textinput textInput form-control" placeholder="content"></textarea></td>
                 </tr>
-                <input type="button" value="삭제" onclick="remove_item(this)">
             </div>
             <br>
 
@@ -133,7 +133,6 @@
                                   class="textinput textInput form-control" placeholder="content"></textarea></td>
                 </tr>
                 <tr>
-                <input type="button" value="삭제" onclick="remove_item(this)"></tr>
             </div>
             <br>
 
@@ -155,11 +154,11 @@
                     <td><textarea class="form-control" id="id_port6" name="port6" rows=20
                                   class="textinput textInput form-control" placeholder="content"></textarea></td>
                 </tr>
-                <tr>
-                    <td colspan="2"><input type="button" value="삭제" onclick="remove_item1(this)"></td>
-                     <td colspan="2"><div id="field"></div>
-                         <input type="button" value=" 추가 " onclick="add_item1()"><br></td>
-                </tr>
+{#                <tr>#}
+{#                    <td colspan="2"><input type="button" value="삭제" onclick="remove_item1(this)"></td>#}
+{#                     <td colspan="2">#}
+{#                         <input type="button" value=" 추가 " onclick="add_item1()"><br></td>#}
+{#                </tr>#}
             </div>
         </table>
         <br>
