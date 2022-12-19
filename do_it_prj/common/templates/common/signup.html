@@ -1,9 +1,10 @@
-{% extends "single_pages/base.html" %}
+{% extends "homepage/basetem.html" %}
 
 {% block main_area %}
 {% block content %}
 
 <div class="container my-3">
+<br><br><br>
     <form method="post" action="{% url 'common:signup' %}">
         {% csrf_token %}
         {% include "common/form_errors.html" %}
