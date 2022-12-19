@@ -20,9 +20,10 @@
         <div class="aside">
             {% if user.is_superuser %}
                 <br>
-                <button type="button" class="btn btn-success btn-lg">
-                    <a href="{% url 'notice_create' %}">글 작성</a></button>
-                <br>
+                <button type="button" class="btn btn-lg" style="color: #fff; width:100px; height:35px; border-radius:5px;  background-color: #c4919b; border-color: #000000;
+; border-width:3px; border-style: dashed">
+                    <a style="color: #FFFFFF;" href="{% url 'notice_create' %}">글 작성</a></button>
+                <br><br><br>
             {% else %}
             {% endif %}
             <div id="sidebar">

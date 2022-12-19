@@ -62,6 +62,20 @@ a:hover{
 em{
 	font-style:italic;
 }
+
+/*---btn---*/
+
+.btn-primary {
+  color: #fff;
+  background-color: #a8817f;
+  border-color: #a8817f;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #7c6463;
+  border-color: #7c6463;
+}
+
 .hide{
 	display:none;
 }
