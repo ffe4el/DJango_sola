@@ -16,6 +16,23 @@
             position: sticky;
             top: 0;
         }
+        .login-btn {
+            color: #fff;
+            width: 80px;
+            height: 28px;
+            border-radius: 5px;
+            background-color: #c4919b;
+            border-color: #000000;
+            border-width: 3px;
+            border-style: dashed;
+            cursor: grab;
+        }
+        .login-btn:hover {
+
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
+            background-color: #d5b2b9;
+
+        }
 
     </style>
 
@@ -32,11 +49,12 @@
     <![endif]-->
     <!--[if IE 7]><link type="text/css" rel="stylesheet" href="{% static 'homepage/bootstrap/styles/ie7.css' %}"><![endif]-->
 </head>
-<body class="page">
 <div id="wrap">
     <div id="header">
         <a href="/"><img src="{% static 'homepage/bootstrap/images/joentree.png' %}" . width="200" , height="110"></a>
+
         <div id="nav">
+
             <ul class="menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/introduce">About</a>
@@ -65,10 +83,12 @@
                         <li><a href="/chat">팀 채팅</a><br></li>
                         <li><a href="/team_post">팀 포스트</a><br></li>
                     </ul>
+                </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li>
+                    <a href="{% url 'common:login' %}">
+                        <input type="button" class="login-btn" value='login'/>
+                    </a>
                 </li>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button type="button" class="btn bg-tomato"><a href="{% url 'common:login' %}">login</a></button>
-
 
             </ul>
 
