@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block main_area %}
-    <div id="main">
-        <div id="content">
-            <h3>콘택트 요청 리스트</h3>
+    <div id="main"><h3>콘택트 요청 리스트</h3>
             <hr><br>
+        <div id="content">
+
             {% for a in accounts %}
                 <div class="article">
                     <h3 class="article-title"><a href="#">name : {{ a.name }}</a></h3>

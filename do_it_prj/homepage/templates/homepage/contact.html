@@ -20,7 +20,7 @@
                     <input id="form_subject" type="text" name="subject"  placeholder="Subject" required/>
                     <textarea id="form_message" rows="10" cols="40" name="message"
                               placeholder="당사와 희망하는 미팅 시간을 적어주시면 예약을 잡을 수 있습니다." required></textarea>
-                    <input id="form_submit" class="submit" type="submit" name="submit" value="Submit &raquo;" required/>
+                    <input id="form_submit" class="submit" type="submit" name="submit" value="Submit &raquo;" onclick="javascript:btn()" required/>
                     <div class="hide">
                         <label>Do not fill out this field</label>
                         <input name="spam_check" type="text" value=""/>
@@ -43,4 +43,9 @@
         </div>
         <!--end contact-form-container-->
     </div>
+    <script>
+function btn(){
+    alert('제출이 완료되었습니다.');
+}
+</script>
 {% endblock %}

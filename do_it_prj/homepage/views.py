@@ -148,7 +148,7 @@ def contact(request):
             message=message,
         )
 
-        return redirect('account')
+        return redirect('/contact')
 
     return render(request, 'homepage/contact.html', {'accounts': accounts})
 
