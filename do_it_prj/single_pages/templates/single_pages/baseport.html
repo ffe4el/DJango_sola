@@ -15,6 +15,9 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
           type="text/css"/>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
     <!-- Core theme CSS (includes Bootstrap)-->
     {% if post.type == 'styles' %}
         <link rel="stylesheet" href="{% static 'single_pages/bootstrap/styles.css' %}">
@@ -55,6 +58,22 @@
             border-radius: 10%;
             background: #a0817f;
             color: #a0817f;
+        }
+
+        div {
+            font-family: 'Song Myung', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6, h7, p {
+            font-family: 'Song Myung', sans-serif;
+        }
+
+        #sidebar {
+            font-family: 'Jua', sans-serif;
+        }
+
+        #sidebar-title {
+            font-family: 'Jua', sans-serif;
         }
 
     </style>
@@ -137,35 +156,38 @@
                 <form id="contact-form" method="POST" action="#">{% csrf_token %}
                     <!-- Name input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="form_name" type="text" name="name" placeholder="Enter your name..."
+                        <input class="form-control" id="form_name" type="text" name="name"
+                               placeholder="Enter your name..."
                                required/>
                         <label for="name">Full name</label>
-{#                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>#}
+                        {#                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>#}
                     </div>
                     <!-- Email address input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="form_email" type="text" name="email" placeholder="name@example.com"
+                        <input class="form-control" id="form_email" type="text" name="email"
+                               placeholder="name@example.com"
                                required/>
                         <label for="email">Email address</label>
-{#                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>#}
-{#                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>#}
+                        {#                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>#}
+                        {#                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>#}
                     </div>
                     <!-- Phone number input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="form_subject" type="text" name="subject"  placeholder="Subject"
+                        <input class="form-control" id="form_subject" type="text" name="subject" placeholder="Subject"
                                required/>
                         <label for="subject">Subject</label>
                     </div>
                     <!-- Message input-->
                     <div class="form-floating mb-3">
                         <textarea class="form-control" id="form_message" rows="10" cols="40" name="message"
-                              placeholder="당사와 희망하는 미팅 시간을 적어주시면 예약을 잡을 수 있습니다."
+                                  placeholder="당사와 희망하는 미팅 시간을 적어주시면 예약을 잡을 수 있습니다."
                                   style="height: 10rem" required></textarea>
                         <label for="message">Message</label>
                     </div>
 
                     <!-- Submit Button-->
-                   <input id="form_submit" class="btn btn-primary btn-xl submit" type="submit" name="submit" value="Submit &raquo;" required/>
+                    <input id="form_submit" class="btn btn-primary btn-xl submit" type="submit" name="submit"
+                           value="Submit &raquo;" required/>
                 </form>
             </div>
         </div>
