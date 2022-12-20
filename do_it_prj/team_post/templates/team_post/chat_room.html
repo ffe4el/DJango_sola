@@ -12,6 +12,9 @@
             crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/1fb217f3df.js" crossorigin="anonymous"></script>
     <script src="../../static/team_post/js/bootstrap.bundle.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 
     <style>
         a {
@@ -28,14 +31,25 @@
             border-radius: 0;
         }
 
-        #file-upload-botton{
+        #file-upload-botton {
             background-color: #16537E;
         }
 
+        div {
+            font-family: 'Jua', sans-serif;
+        }
+
+        title {
+            font-family: 'Jua', sans-serif;
+        }
+
+
     </style>
 </head>
-<body onscroll="SetDivPosition()">
+<body>
 <script language="javascript" for="plan6" event="onload">
+
+    history.scrollRestoration = "manual"
 
     var strCook = document.cookie;
     if (strCook.indexOf("!~") != 0) {
@@ -75,7 +89,7 @@
                                 </button>
                                 <ul class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton1">
                                     {% for z in room_list %}
-                                        <li class="dropdown-item" >
+                                        <li class="dropdown-item">
                                             <a href="/team_post/{{ z }}" style="color: #16537E;"><p>{{ z }}</p></a>
                                         </li>
                                     {% endfor %}
@@ -122,6 +136,8 @@
             </ul>
         </div>
         <div class="col-md-8 bg-white ">
+            <input type='hidden' name='left_scroll_top'>
+
             <div class="chat-message" style="overflow:scroll; padding-top: 10px; height: 500px;" id="chat_pages">
                 <div id="massage-window">
                     <ul class="chat" style=" padding-left: 16px; padding-right: 16px;">
@@ -171,19 +187,23 @@
                     <div class="form-group d-flex">
                         <input class="form-control border no-shadow no-rounded" placeholder="massage" name="massage">
                         <span class="input-group-btn">
-            			<button class="btn btn-success  border-0" type="submit" style="background-color: #99C3E8;">Send</button>
+            			<button class="btn btn-success  border-0" type="submit"
+                                style="background-color: #99C3E8;">Send</button>
             		</span>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
+                       <input type='hidden' name='right_scroll_top'>  &nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="btn-group">
-                            <button type="button" class="btn btn-secondary dropdown-toggle border-0" data-bs-toggle="dropdown"
+                            <button type="button" class="btn btn-secondary dropdown-toggle border-0"
+                                    data-bs-toggle="dropdown"
                                     aria-expanded="false" style="background-color: #99C3E8; height: 36px;">
                                 upload
                             </button>
                             <ul class="dropdown-menu border-0" aria-labelledby="dropdownMenuButton1">
                                 <li><a class="dropdown-item" onclick="ondisplay2()" style="color: #16537E;"><i
                                         class="fa-solid fa-cloud-arrow-up"></i> Upload files</a></li>
-                                <li><a class="dropdown-item" onclick="ondisplay()" style="color: #16537E;">files list</a></li>
-                                <li><a class="dropdown-item" onclick="offdisplay()" style="color: #16537E;">Close</a></li>
+                                <li><a class="dropdown-item" onclick="ondisplay()" style="color: #16537E;">files
+                                    list</a></li>
+                                <li><a class="dropdown-item" onclick="offdisplay()" style="color: #16537E;">Close</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -193,21 +213,26 @@
             <div id="file_upload" style="display: none; margin-left: 15px;" class="ml-5 mt-2">
                 <form action="" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
-                    <input class="btn btn-primary btn-sm border-0" id="file-upload-botton" type="file" name="files" style="background-color: #99C3E8;">
+                    <input class="btn btn-primary btn-sm border-0" id="file-upload-botton" type="file" name="files"
+                           style="background-color: #99C3E8;">
                     <input type="hidden" name="massage" value="파일 업로드 완료." style="ime-mode:auto;">
-                    <input class="btn btn-primary btn-sm border-0" type="submit" value="Upload" style="background-color: #99C3E8;">
+                    <input class="btn btn-primary btn-sm border-0" type="submit" value="Upload"
+                           style="background-color: #99C3E8;">
                 </form>
             </div>
-            <table id="file_list" style="display: none;">
+            <table class="text-center" id="file_list" style="display: none;">
                 <tr>
                     <th><h5 class="ml-2">file</h5></th>
+                    <th><h5 class="ml-2"></h5></th>
                 </tr>
                 {% for talk in talks %}
                     {% if talk.files %}
                         <tr>
-                            <td><h4>{{ talk.get_file_name }}</h4>&ebsp;&ebsp;<a href="{{ talk.files.url }}" class="btn btn-outline text-white" role="button"
-                                   download="{{ talk.files.url }}" style="background-color:  #99C3E8; width: 94px; height: 36px;">
-                                    click!
+                            <td class="mr-5"><h5>{{ talk.get_file_name }}</h5></td>
+                            <td><a href="{{ talk.files.url }}" class="btn btn-outline text-white" role="button"
+                                   download="{{ talk.files.url }}"
+                                   style="background-color:  #99C3E8; width: 94px; height: 36px;">
+                                click!
                                 {% if talk.get_file_ext == 'csv' %}
                                     <i class="fas fa-file-csv"></i>
                                 {% elif talk.get_file_ext == 'xlsx' or post.get_file_ext == 'xls' %}
@@ -245,17 +270,28 @@
 
     })
 
-    function autofresh() {
-        var currentLocation = window.location;
-        $("#massage-windo").load(currentLocation + ' #massage-window');
-    }
-
     setInterval('autofresh()', 2000);
 
-
-    function reloadDivArea() {
-        $('#massage-window').load(location.href + ' #massage-window');
+    function autofresh() {
+        var currentLocation = window.location;
+        $("#massage-window").load(currentLocation + ' #massage-window');
     }
+
+
+    function div_replay() {
+        document.readform.left_scroll_top.value = document.all['LEFT_SCROLL'].scrollTop;
+        document.readform.right_scroll_top.value = document.all['RIGHT_SCROLL'].scrollTop;
+    }
+
+    //SCROLL Bar Reload
+    function div_replay_scroll() {
+        document.all['LEFT_SCROLL'].scrollTop = document.readform.left_scroll_top.value;
+        document.all['RIGHT_SCROLL'].scrollTop = document.readform.right_scroll_top.value;
+    }
+
+
+    parent.div_replay_scroll();
+
 
 
     function ondisplay() {
