@@ -3,9 +3,10 @@
 
 {% block main_area %}
     <div id="main">
-        <h3>경영철학과 목표</h3><hr>
+        <h3>경영철학과 목표</h3>
+        <hr>
         <div id="content">
-            <h4>1) 인재와 기술을 바탕으로</h2>
+            <h4>1) 인재와 기술을 바탕으로</h4>
             <p>
                 · 인재육성과 기술우위 확보를 경영의 원칙으로 삼는다.<br>
                 · 인재와 기술의 조화를 통하여 경영전반의 시너지 효과를 증대한다.</p>
@@ -20,33 +21,41 @@
                 · 인류공동체 일원으로서의 사명을 다한다.
             </p>
             <br>
-            <h3>핵심가치</h3><hr>
-            <h4><mark style="background-color: #cce0d6;">최고지향</mark></h4>
+            <h3>핵심가치</h3>
+            <hr>
+            <h4>
+                <mark style="background-color: #cce0d6;">최고지향</mark>
+            </h4>
             <p>끊임없는 열정과 도전정신으로 모든 면에서 세계 최고가 되기 위해 최선을 다합니다</p>
-            <h4><mark style="background-color: #cce0d6;">변화선도</mark></h4>
+            <h4>
+                <mark style="background-color: #cce0d6;">변화선도</mark>
+            </h4>
             <p>변화하지 않으면 살아남을 수 없다는 위기의식을 가지고 신속하고 주도적으로 변화와 혁신을 실행합니다.</p>
-            <h4><mark style="background-color: #cce0d6;">상생추구</mark></h4>
+            <h4>
+                <mark style="background-color: #cce0d6;">상생추구</mark>
+            </h4>
             <p>우리는 사회의 일원으로서 더불어 살아간다는 마음을 가지고 지역사회, 국가, 인류의 공동 번영을 위해 노력합니다</p>
-
         </div>
-        <!--end content-->
+
+        {#        사이드바 부분#}
         <div class="aside">
-        <div id="sidebar">
-            <h3 class="sidebar-title">Want To Hire Joen Tree?</h3>
-            <p>Our company is always recruiting Highflier.</p>
-            <a class="sidebar-button" href="{% url 'contact' %}">Contact Us &raquo;</a></div>
-        <div id="sidebar">
-            <br>
-            <h3 class="sidebar-title">About Joen Tree</h3>
-            <ul class="sidebar-menu">
-                <li><a href="/introduce">회사 소개</a><br></li>
-                <li><a href="/history">회사 연혁</a><br></li>
-                <li><a href="/business">경영 철학 및 핵심 가치</a><br></li>
-                <li><a href="/map">찾아오시는 길</a><br></li>
-                <li><a href="/notice">공지사항</a><br></li>
-            </ul>
-        </div></div>
-        <!--end sidebar-->
+            <div id="sidebar">
+                <h3 class="sidebar-title">Want To Hire Joen Tree?</h3>
+                <p>Our company is always recruiting Highflier.</p>
+                <a class="sidebar-button" href="{% url 'contact' %}">Contact Us &raquo;</a></div>
+            <div id="sidebar">
+                <br>
+                <h3 class="sidebar-title">About Joen Tree</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="/introduce">회사 소개</a><br></li>
+                    <li><a href="/history">회사 연혁</a><br></li>
+                    <li><a href="/business">경영 철학 및 핵심 가치</a><br></li>
+                    <li><a href="/map">찾아오시는 길</a><br></li>
+                    <li><a href="/notice">공지사항</a><br></li>
+                </ul>
+            </div>
+        </div>
+
     </div>
-    <!--end main-->
+
 {% endblock %}

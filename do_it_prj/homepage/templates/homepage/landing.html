@@ -2,34 +2,29 @@
 {% load static %}
 
 {% block main_area %}
+{#    회사 주요 서비스 칸#}
     <div id="featured-section">
-        <h2><img src="{% static 'homepage/bootstrap/images/flag.png' %}" width="30" height="30">&nbsp&nbspflagship
-            product</h2>
+        <h2><img src="{% static 'homepage/bootstrap/images/flag.png' %}" width="30" height="30">&nbsp;&nbsp;flagship product</h2>
         <div id="circles">
             <div class="red-circle circle first">
                 <h3><em>[Agriculture]</em><br></h3>
                 <p><img src="{% static 'homepage/bootstrap/images/sprout.png' %}" width="100" height="100"></p>
             </div>
-            <!--end red-circle-->
             <div class="pink-circle circle">
                 <h3><em>[Soft-Engineering]</em><br></h3>
                 <p><img src="{% static 'homepage/bootstrap/images/soft.png' %}" width="100" height="100"></p>
             </div>
-            <!--end red-circle-->
             <div class="orange-circle circle">
                 <h3><em>[AI/Argorithm]</em><br></h3>
                 <p><img src="{% static 'homepage/bootstrap/images/AI.png' %}" width="100" height="100"></p>
             </div>
-            <!--end red-circle-->
             <div class="yellow-circle circle">
                 <h3><em>[DataScience]</em><br></h3>
                 <p><img src="{% static 'homepage/bootstrap/images/data.png' %}" width="100" height="100"></p>
             </div>
-            <!--end red-circle-->
         </div>
-        <!--end circles-->
     </div>
-    <!--end featured-section-->
+{#사이트 밑부분 공지사항, 채팅방 목록#}
     <div id="frontpage-main">
         <div id="overview" class="frontpage-section">
             <h3><a href="/notice" style="color:green;">📌 <b>공지사항</b></a></h3>
@@ -43,13 +38,11 @@
         </div>
         <!--end frontpage-content-->
         <div id="latest-article" class="frontpage-section">
-            <h3>🗣 Now Team Post Rooms</h3>
+            <h3><a href="/team_post">🗣 Now Team Post Rooms</a></h3>
             {% for room  in rooms %}
             <a class="article-title" href="{{ room.get_absolute_url }}">💜 {{ room.roomname }}</a><br>
             {% endfor %}
-{#            <p class="meta">Posted By: [ADD AUTHOR NAME]</p>#}
-{#            <p>[ADD ARTICLE OVERVIEW]</p>#}
             <a class="read-more" href="/team_post">Go to Site &raquo;</a></div>
-        <!--end frontpage-sidebar-->
+
     </div>
 {% endblock %}
