@@ -8,19 +8,6 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from homepage.models import Account
 
-# def landing(request):
-#     return render(
-#         request,
-#         'single_pages/landing.html'
-#     )
-
-# def about_me(request):
-#     return render(
-#         request,
-#         'single_pages/about_me.html'
-#     )
-
-
 
 def index(request):
     posts = Post.objects.all().order_by('-pk')
@@ -143,8 +130,3 @@ class PostUpdate(UpdateView):
 #         return redirect('index')
 #     return render(request, 'homepage/update.html', {'posts': posts})
 
-
-
-# def port(request):
-#     return render(request, 'single_pages/post_detail.html')
-# Create your views here.

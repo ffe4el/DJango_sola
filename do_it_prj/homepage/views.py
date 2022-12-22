@@ -18,13 +18,6 @@ def landing(request):
     )
 
 
-def about(request):
-    return render(
-        request,
-        'homepage/services.html'
-    )
-
-
 def notice(request):
     topics = Topic.objects.all().order_by('-pk')
     return render(
@@ -113,12 +106,6 @@ def recruit(request):
         'homepage/recruit.html'
     )
 
-
-# def contact(request):
-#     return render(
-#         request,
-#         'homepage/contact.html'
-#     )
 
 def account(request):
     accounts = Account.objects.all().order_by('-pk')
