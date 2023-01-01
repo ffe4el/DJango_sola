@@ -21,6 +21,9 @@
   포트폴리오 리스트들로 정렬되어 있는 공간 입니다.
   <img width="900" alt="image" src="https://user-images.githubusercontent.com/93892724/210167065-00a6f54a-5eb2-4cc4-8dad-4a059d3c4daf.png">
   <br><br><br><hr>
+  ⭐️ 포트폴리오 3가지 테마
+  <img width="788" alt="image" src="https://user-images.githubusercontent.com/93892724/210167323-3b20330a-4e66-40b1-a75c-3be6bc41f8b5.png"><br><br><hr>
+
 ⭐️ 포트폴리오를 생성하는 방법
 <img width="917" alt="image" src="https://user-images.githubusercontent.com/93892724/210167085-0567e697-aeb7-4e5b-8c6c-99902533baec.png"><br><br><hr>
 ⭐️ 개인포트폴리오 사이트의 모습 중...<br>
