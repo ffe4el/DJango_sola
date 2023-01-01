@@ -3,6 +3,9 @@
 ### 주제: Joen Tree🌲 회사 사이트 만들기
 #### 주요 기능 : 포트폴리오 사이트 생성, 일정표에 일정 예약, 실시간 채팅/ 팀채팅
 팀원 : 김솔아(팀장), 전혜진, 황현성
-
+<hr>
+👇🏻홈페이지 flow chart👇🏻
+<img width="894" alt="image" src="https://user-images.githubusercontent.com/93892724/210166602-1355105f-c4e1-4e6a-904d-8e7ba38b2509.png">
+<br>
+👇🏻회사홈페이지 Main 화면👇🏻
 <img width="1098" alt="image" src="https://user-images.githubusercontent.com/93892724/210166412-6d1e14cd-bb0c-4e4f-8fa0-1631430fc1d7.png">
-회사홈페이지 Main 화면
