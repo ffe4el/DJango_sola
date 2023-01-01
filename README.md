@@ -1,5 +1,5 @@
-<span style=''>
-# DJango_project
+<div align="center">
+  # DJango_project
 ## 2022-2학기 응용소프트웨어실습
 ### 주제: Joen Tree🌲 회사 사이트 만들기
 #### 주요 기능 : 포트폴리오 사이트 생성, 일정표에 일정 예약, 실시간 채팅/ 팀채팅
@@ -10,5 +10,6 @@
 <br>
 👇🏻회사홈페이지 Main 화면👇🏻
 <img width="1098" alt="image" src="https://user-images.githubusercontent.com/93892724/210166412-6d1e14cd-bb0c-4e4f-8fa0-1631430fc1d7.png">
-{: .text-center }
-</span>
+
+
+</div>
