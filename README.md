@@ -28,4 +28,7 @@
 <img width="716" alt="image" src="https://user-images.githubusercontent.com/93892724/210167125-a9f0e33f-40f8-40c9-b9da-0d55714fde09.png"><br><br><hr>
 ⭐️ 개인포트폴리오의 삭제와 수정 방법
 <img width="772" alt="image" src="https://user-images.githubusercontent.com/93892724/210167165-0c9128b0-0821-426c-8573-c4f4856c18f8.png"><br><br>
+⭐️ 배포 단계
+도커를 이용하여 배포<br>
+🔗 113.168.63.23:8001/
   </div>
