@@ -75,7 +75,7 @@ defusedxml @ file:///tmp/build/80754af9/defusedxml_1615228127516/work
 diff-match-patch @ file:///Users/ktietz/demo/mc3/conda-bld/diff-match-patch_1630511840874/work
 dill @ file:///tmp/build/80754af9/dill_1623919422540/work
 distributed @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_ca26b14a-a121-44b5-82b0-dbb6ccf35309a1h39fbg/croots/recipe/distributed_1658520748547/work
-Django==3.2.10
+Django==3.2.16
 django-crispy-forms==1.14.0
 django-extensions==3.2.1
 django-markdownx==3.0.1
