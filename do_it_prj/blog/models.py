@@ -30,7 +30,7 @@ class Tag(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=30) #제목은 문자를 담는 필드로, 최대 30글자까지
     hook_text = models.CharField(max_length=100, blank=True)
-    content = MarkdownxField() #마크다운 문법쓴다....ㄷㄷ
+    content = MarkdownxField()
     head_image=models.ImageField(upload_to='blog/images/%Y/%m/%d/', blank=True)
     file_upload = models.FileField(upload_to='blog/files/%Y/%m/%d/', blank=True)
     created_at = models.DateTimeField(auto_now_add=True) #작성일은 월일시분초까지 기록할 수 있게 해주는 타임 필드
